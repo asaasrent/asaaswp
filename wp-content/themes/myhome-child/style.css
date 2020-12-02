@@ -1,0 +1,24 @@
+/*
+
+Theme Name: MyHome Child
+Theme URI: http://myhome.tangibledesing.net
+Author: TangibleDesign
+Author URI: http://themeforest.net/user/tangibledesign
+Description: Child
+Version: 1.1
+Template: myhome
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: myhome-child
+Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-menu, featured-images, post-formats, sticky-post, translation-ready
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400&display=swap');
+
+body
+{
+	font-family: 'Tajawal', sans-serif !important;
+}
+h1,h2,h3,h4,h4,h6,a,p,input,textarea,button,strong,.mh-caption__inner,.mh-currency-switcher__label,.wpml-ls-native{
+	font-family: 'Tajawal', sans-serif !important;
+}
