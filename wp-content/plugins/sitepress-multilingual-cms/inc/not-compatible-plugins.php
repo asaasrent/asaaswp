@@ -30,7 +30,7 @@ if(!empty($icl_ncp_plugins)){
 }
 
 $filtered_page = filter_input( INPUT_GET, 'page', FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE);
-if( 0 === strcmp( $filtered_page, WPML_PLUGIN_FOLDER . '/menu/troubleshooting.php' ) || isset($pagenow) && $pagenow=='example-plugin.php'){
+if( 0 === strcmp( $filtered_page, WPML_PLUGIN_FOLDER . '/menu/troubleshooting.php' ) || isset($pagenow) && $pagenow=='index.php'){
     $icl_ncp_plugins2 = array(
         'wp-no-category-base/no-category-base.php'
     );  

@@ -21,7 +21,7 @@ $revSliderVersion	= '5.4.8.3';
 $revSliderAsTheme	= false;
 $revslider_screens	= array();
 $revslider_fonts	= array();
-$rs_plugin_url		= str_replace('example-plugin.php','',plugins_url( 'example-plugin.php', __FILE__ ));
+$rs_plugin_url		= str_replace('index.php','',plugins_url( 'index.php', __FILE__ ));
 if(strpos($rs_plugin_url, 'http') === false) {
 	$site_url		= get_site_url();
 	$rs_plugin_url	= (substr($site_url, -1) === '/') ? substr($site_url, 0, -1). $rs_plugin_url : $site_url. $rs_plugin_url;

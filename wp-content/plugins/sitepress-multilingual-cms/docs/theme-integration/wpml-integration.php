@@ -20,7 +20,7 @@ function wpml_get_home_url(){
 
 
 // LANGUAGE SELECTOR
-// USAGE place this on the single.php, page.php, example-plugin.php etc... - inside the loop
+// USAGE place this on the single.php, page.php, index.php etc... - inside the loop
 // function wpml_content_languages($args)
 // args: skip_missing, before, after
 // defaults: skip_missing = 1, before =  __('This post is also available in: '), after = ''

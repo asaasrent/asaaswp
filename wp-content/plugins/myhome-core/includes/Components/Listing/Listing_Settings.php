@@ -469,9 +469,9 @@ class Listing_Settings {
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => esc_html__( '"تحميل المزيد" button label', 'myhome-core' ),
+				'heading'     => esc_html__( '"Load More" button label', 'myhome-core' ),
 				'param_name'  => 'load_more_button',
-				'value'       => esc_html__( 'تحميل المزيد', 'myhome-core' ),
+				'value'       => esc_html__( 'Load more', 'myhome-core' ),
 				'save_always' => true,
 				'group'       => esc_html__( 'General', 'myhome-core' ),
 				'dependency'  => array(

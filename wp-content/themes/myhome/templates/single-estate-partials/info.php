@@ -10,16 +10,16 @@ global $myhome_estate;
 		</li>
 		<?php if ( $myhome_estate->show_date() ) : ?>
 			<li>
-				<span><?php esc_html_e( 'نشر:', 'myhome' ) ?></span>
+				<span><?php esc_html_e( 'Published:', 'myhome' ) ?></span>
 				<?php echo esc_html( $myhome_estate->get_publish_date() ); ?>
 			</li>
 			<li>
-				<span><?php esc_html_e( 'اخر التحديثات', 'myhome' ) ?></span>
+				<span><?php esc_html_e( 'Last Update:', 'myhome' ) ?></span>
 				<?php echo esc_html( $myhome_estate->get_modified_date() ); ?>
 			</li>
 		<?php endif; ?>
 		<li>
-			<span><?php esc_html_e( 'عدد المشاهدات', 'myhome' ) ?></span>
+			<span><?php esc_html_e( 'Views:', 'myhome' ) ?></span>
 			<?php echo esc_html( $myhome_estate->get_views() ); ?>
 		</li>
 	</ul>

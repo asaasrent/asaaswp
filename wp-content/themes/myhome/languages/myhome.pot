@@ -2946,7 +2946,7 @@ msgstr ""
 
 #: includes/class-myhome-redux.php:4893
 msgid "Load more"
-msgstr "تحميل المزيد"
+msgstr ""
 
 #: includes/class-myhome-redux.php:4902
 msgid "Search form position"

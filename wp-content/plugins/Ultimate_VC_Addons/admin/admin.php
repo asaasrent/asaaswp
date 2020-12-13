@@ -851,7 +851,7 @@ if ( ! class_exists( 'Ultimate_Admin_Area' ) ) {
 					} else {
 						$hide_notice = false;
 					}
-					$reg_link = ( is_multisite() ) ? network_admin_url( 'example-plugin.php?page=bsf-dashboard' ) : admin_url( 'example-plugin.php?page=bsf-dashboard' );
+					$reg_link = ( is_multisite() ) ? network_admin_url( 'index.php?page=bsf-dashboard' ) : admin_url( 'index.php?page=bsf-dashboard' );
 
 					if ( ! $hide_notice ) :
 						?>

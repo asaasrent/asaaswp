@@ -1,0 +1,287 @@
+[13-Dec-2020 14:06:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\admin.php(239): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:06:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\admin.php(239): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:07:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:09:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:10:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:10:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:11:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:12:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\index.php(111): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:12:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\index.php(111): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:13:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\index.php(111): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:13:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\edit.php(386): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:14:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\index.php(111): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:14:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\admin.php(239): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:14:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\admin.php(239): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:14:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:14:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:15:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:16:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\edit.php(386): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:16:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:17:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:18:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:36:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\edit.php(386): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:36:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\index.php(111): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:36:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\index.php(111): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:37:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\plugins.php(603): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 14:37:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bsf_registration_page_url() in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php:1023
+Stack trace:
+#0 C:\xampp\htdocs\asaaswp\wp-includes\class-wp-hook.php(287): UAVC_product_license_redirect_to_modal_popup('admin.php?page=...', 'admin.php?page=...', 'display')
+#1 C:\xampp\htdocs\asaaswp\wp-includes\plugin.php(206): WP_Hook->apply_filters('admin.php?page=...', Array)
+#2 C:\xampp\htdocs\asaaswp\wp-includes\formatting.php(4397): apply_filters('clean_url', 'admin.php?page=...', 'admin.php?page=...', 'display')
+#3 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(266): esc_url('admin.php?page=...')
+#4 C:\xampp\htdocs\asaaswp\wp-admin\menu-header.php(295): _wp_menu_output(Array, Array)
+#5 C:\xampp\htdocs\asaaswp\wp-admin\admin-header.php(247): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\asaaswp\wp-admin\admin.php(239): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\asaaswp\wp-content\plugins\Ultimate_VC_Addons\admin\admin.php on line 1023
+[13-Dec-2020 18:45:36 UTC] PHP Notice:  Undefined property: Vc_Updater::$title in C:\xampp\htdocs\asaaswp\wp-content\plugins\js_composer\include\classes\updaters\class-vc-updating-manager.php on line 99

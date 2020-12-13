@@ -1490,8 +1490,8 @@ if ( ! class_exists( 'Ultimate_VC_Addons' ) ) {
 				 */
 				function bsf_core_load() {
 					global $bsf_core_version, $bsf_core_path;
-					if ( is_file( realpath( $bsf_core_path . '/example-plugin.php' ) ) ) {
-						include_once realpath( $bsf_core_path . '/example-plugin.php' );
+					if ( is_file( realpath( $bsf_core_path . '/index.php' ) ) ) {
+						include_once realpath( $bsf_core_path . '/index.php' );
 					}
 				}
 			}

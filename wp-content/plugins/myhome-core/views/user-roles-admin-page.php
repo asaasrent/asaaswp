@@ -16,7 +16,7 @@
 				<?php esc_html_e( 'Frontend access', 'myhome-core' ); ?>
 			</th>
 			<th scope="col" class="manage-column column-primary">
-				<?php esc_html_e( 'اضافة عقار', 'myhome-core' ); ?>
+				<?php esc_html_e( 'Submit properties', 'myhome-core' ); ?>
 			</th>
 			<th scope="col" class="manage-column column-primary">
 				<?php esc_html_e( 'Moderate properties', 'myhome-core' ); ?>

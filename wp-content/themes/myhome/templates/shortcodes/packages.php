@@ -31,7 +31,7 @@ global $myhome_packages;
 					<?php esc_html_e( 'رقم العقار', 'myhome' ); ?><?php echo esc_html( $product->get_properties_number() ); ?>
 				</div>
 				<div class="mh-pricing-table__row">
-					<?php esc_html_e( 'الرقم المميز:', 'myhome' ); ?><?php echo esc_html( $product->get_featured_number() ); ?>
+					<?php esc_html_e( 'Featured number:', 'myhome' ); ?><?php echo esc_html( $product->get_featured_number() ); ?>
 				</div>
 				<?php $product->is_virtual() ?>
 

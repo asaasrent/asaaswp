@@ -75,7 +75,7 @@ if ( ! class_exists( 'My_Home_Init' ) ) :
 
 			remove_action( 'welcome_panel', 'wp_welcome_panel' );
 			add_action( 'welcome_panel', array( $this, 'myhome_dashboard' ) );
-			add_action( 'load-example-plugin.php', array( $this, 'show_welcome_panel' ) );
+			add_action( 'load-index.php', array( $this, 'show_welcome_panel' ) );
 
 			add_action( 'template_redirect', function () {
 				global $wp_query;

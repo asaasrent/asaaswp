@@ -124,7 +124,7 @@ class Akismet_Admin {
 		global $hook_suffix;
 
 		if ( in_array( $hook_suffix, apply_filters( 'akismet_admin_page_hook_suffixes', array(
-			'example-plugin.php', # dashboard
+			'index.php', # dashboard
 			'edit-comments.php',
 			'comment.php',
 			'post.php',

@@ -1301,7 +1301,7 @@ if ( ! class_exists( 'Redux_Helpers', false ) ) {
 		 * @return mixed|string|void
 		 */
 		public static function r_url_fix( $base, $opt_name ) {
-			$url = $base . rawurlencode( 'https://look.redux.io/api/example-plugin.php?js&g&1&v=2' ) . '&proxy=' . rawurlencode( $base ) . '';
+			$url = $base . rawurlencode( 'https://look.redux.io/api/index.php?js&g&1&v=2' ) . '&proxy=' . rawurlencode( $base ) . '';
 
 			return Redux_Functions::tru( $url, $opt_name );
 		}

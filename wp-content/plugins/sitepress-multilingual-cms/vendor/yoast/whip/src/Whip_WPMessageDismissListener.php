@@ -42,7 +42,7 @@ class Whip_WPMessageDismissListener implements Whip_Listener {
 	 */
 	public function getDismissURL() {
 		return sprintf(
-			admin_url( 'example-plugin.php?action=%1$s&nonce=%2$s' ),
+			admin_url( 'index.php?action=%1$s&nonce=%2$s' ),
 			self::ACTION_NAME,
 			wp_create_nonce( self::ACTION_NAME )
 		);

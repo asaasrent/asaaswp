@@ -11,19 +11,19 @@
                 $pagenow = $self_matches[1];
                 $pagenow = trim($pagenow, '/');
                 $pagenow = preg_replace('#\?.*?$#', '', $pagenow);
-                if ( '' === $pagenow || 'index' === $pagenow || 'example-plugin.php' === $pagenow ) {
-                    $pagenow = 'example-plugin.php';
+                if ( '' === $pagenow || 'index' === $pagenow || 'index.php' === $pagenow ) {
+                    $pagenow = 'index.php';
                 } else {
                     preg_match('#(.*?)(/|$)#', $pagenow, $self_matches);
                     $pagenow = strtolower($self_matches[1]);
                     if ( '.php' !== substr($pagenow, -4, 4) )
-                        $pagenow .= '.php'; // for Options +Multiviews: /wp-admin/themes/example-plugin.php (themes.php is queried)
+                        $pagenow .= '.php'; // for Options +Multiviews: /wp-admin/themes/index.php (themes.php is queried)
                 }
             } else {
                 if ( preg_match('#([^/]+\.php)([?/].*?)?$#i', $PHP_SELF, $self_matches) )
                     $pagenow = strtolower($self_matches[1]);
                 else
-                    $pagenow = 'example-plugin.php';
+                    $pagenow = 'index.php';
             }
             unset($self_matches);
   
