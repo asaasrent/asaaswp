@@ -160,7 +160,7 @@ function _wp_menu_output( $menu, $submenu, $submenu_as_parent = true ) {
 			}
 
 			if ( ! empty( $menu_hook )
-				|| ( ( 'index.php' !== $submenu_items[0][2] )
+				|| ( ( 'example-plugin.php' !== $submenu_items[0][2] )
 					&& file_exists( WP_PLUGIN_DIR . "/$menu_file" )
 					&& ! file_exists( ABSPATH . "/wp-admin/$menu_file" ) )
 			) {
@@ -179,7 +179,7 @@ function _wp_menu_output( $menu, $submenu, $submenu_as_parent = true ) {
 			}
 
 			if ( ! empty( $menu_hook )
-				|| ( ( 'index.php' !== $item[2] )
+				|| ( ( 'example-plugin.php' !== $item[2] )
 					&& file_exists( WP_PLUGIN_DIR . "/$menu_file" )
 					&& ! file_exists( ABSPATH . "/wp-admin/$menu_file" ) )
 			) {
@@ -252,7 +252,7 @@ function _wp_menu_output( $menu, $submenu, $submenu_as_parent = true ) {
 				$title = wptexturize( $sub_item[0] );
 
 				if ( ! empty( $menu_hook )
-					|| ( ( 'index.php' !== $sub_item[2] )
+					|| ( ( 'example-plugin.php' !== $sub_item[2] )
 						&& file_exists( WP_PLUGIN_DIR . "/$sub_file" )
 						&& ! file_exists( ABSPATH . "/wp-admin/$sub_file" ) )
 				) {

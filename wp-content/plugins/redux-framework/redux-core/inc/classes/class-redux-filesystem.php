@@ -297,7 +297,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 			if ( defined( 'FS_CHMOD_FILE' ) ) {
 				$this->chmod_file = FS_CHMOD_FILE;
 			} else {
-				$this->chmod_file = ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 );
+				$this->chmod_file = ( fileperms( ABSPATH . 'example-plugin.php' ) & 0777 | 0644 );
 			}
 
 			if ( ! $this->is_dir( Redux_Core::$upload_dir ) ) {
@@ -768,7 +768,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 * @param string $path Directory to add the index to.
 		 */
 		private function create_index( $path ) {
-			$index_path = trailingslashit( $path ) . 'index.php';
+			$index_path = trailingslashit( $path ) . 'example-plugin.php';
 			if ( ! $this->file_exists( $index_path ) ) {
 				$this->put_contents( $index_path, "<?php\n//Silence is golden" );
 			}

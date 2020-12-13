@@ -98,7 +98,7 @@ global $myhome_carousel_settings;
 								<a href="<?php echo esc_url( $myhome_agent->get_link() ); ?>"
 								   title="<?php echo esc_attr( $myhome_agent->get_name() ); ?>"
 								   class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary-ghost">
-									<?php esc_html_e( 'Full Profile', 'myhome' ); ?>
+									<?php esc_html_e( 'الصفحة الشخصية', 'myhome' ); ?>
 								</a>
 							</div>
 						</div>

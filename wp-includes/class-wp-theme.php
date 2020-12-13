@@ -312,11 +312,11 @@ final class WP_Theme implements ArrayAccess {
 
 		if ( ! $this->template ) {
 			$this->template = $this->stylesheet;
-			if ( ! file_exists( $this->theme_root . '/' . $this->stylesheet . '/index.php' ) ) {
+			if ( ! file_exists( $this->theme_root . '/' . $this->stylesheet . '/example-plugin.php' ) ) {
 				$error_message = sprintf(
-					/* translators: 1: index.php, 2: Documentation URL, 3: style.css */
+					/* translators: 1: example-plugin.php, 2: Documentation URL, 3: style.css */
 					__( 'Template is missing. Standalone themes need to have a %1$s template file. <a href="%2$s">Child themes</a> need to have a Template header in the %3$s stylesheet.' ),
-					'<code>index.php</code>',
+					'<code>example-plugin.php</code>',
 					__( 'https://developer.wordpress.org/themes/advanced-topics/child-themes/' ),
 					'<code>style.css</code>'
 				);
@@ -335,13 +335,13 @@ final class WP_Theme implements ArrayAccess {
 		}
 
 		// If we got our data from cache, we can assume that 'template' is pointing to the right place.
-		if ( ! is_array( $cache ) && $this->template != $this->stylesheet && ! file_exists( $this->theme_root . '/' . $this->template . '/index.php' ) ) {
+		if ( ! is_array( $cache ) && $this->template != $this->stylesheet && ! file_exists( $this->theme_root . '/' . $this->template . '/example-plugin.php' ) ) {
 			// If we're in a directory of themes inside /themes, look for the parent nearby.
 			// wp-content/themes/directory-of-themes/*
 			$parent_dir  = dirname( $this->stylesheet );
 			$directories = search_theme_directories();
 
-			if ( '.' !== $parent_dir && file_exists( $this->theme_root . '/' . $parent_dir . '/' . $this->template . '/index.php' ) ) {
+			if ( '.' !== $parent_dir && file_exists( $this->theme_root . '/' . $parent_dir . '/' . $this->template . '/example-plugin.php' ) ) {
 				$this->template = $parent_dir . '/' . $this->template;
 			} elseif ( $directories && isset( $directories[ $this->template ] ) ) {
 				// Look for the template in the search_theme_directories() results, in case it is in another theme root.

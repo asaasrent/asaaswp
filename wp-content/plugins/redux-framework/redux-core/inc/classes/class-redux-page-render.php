@@ -246,7 +246,7 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 			$page_parent = Redux_Core::strtolower( $page_parent );
 
 			$test = array(
-				'index.php'               => 'dashboard',
+				'example-plugin.php'               => 'dashboard',
 				'edit.php'                => 'posts',
 				'upload.php'              => 'media',
 				'link-manager.php'        => 'links',

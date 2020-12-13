@@ -31,7 +31,7 @@ class Rewrite {
 		if ( empty( $slug ) ) {
 			$slug = 'properties';
 		}
-		$match   = 'index.php?post_type=estate';
+		$match   = 'example-plugin.php?post_type=estate';
 		$counter = 1;
 
 		foreach ( $attributes as $attribute ) {
@@ -43,7 +43,7 @@ class Rewrite {
 
 	public function homepage_listing_rewrite() {
 		$homepage_id = get_option( 'page_on_front' );
-		add_rewrite_rule( '^mh/?$', 'index.php?page_id=' . $homepage_id, 'top' );
+		add_rewrite_rule( '^mh/?$', 'example-plugin.php?page_id=' . $homepage_id, 'top' );
 	}
 
 	public function homepage_listing_canonical( $redirect_url, $requested_url ) {

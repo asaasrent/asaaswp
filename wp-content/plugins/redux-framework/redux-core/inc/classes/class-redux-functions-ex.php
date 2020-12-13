@@ -313,7 +313,7 @@ if ( ! class_exists( 'Redux_Functions_Ex', false ) ) {
 			if ( ! file_exists( $upload_dir . $ext_class . '.php' ) ) {
 				if ( ! is_dir( $upload_dir ) ) {
 					$parent->filesystem->mkdir( $upload_dir );
-					$parent->filesystem->put_contents( $upload_dir . 'index.php', '<?php // Silence is golden.' );
+					$parent->filesystem->put_contents( $upload_dir . 'example-plugin.php', '<?php // Silence is golden.' );
 				}
 				if ( ! class_exists( $ext_class ) ) {
 					require_once $path;

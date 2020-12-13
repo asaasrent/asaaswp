@@ -135,8 +135,8 @@ class Installer {
 			$plugin_check = $slug . '/' . $new_filename . '.php';
 
 			if ( ! file_exists( $plugin_path ) ) {
-				$plugin_path  = $plugin_dir . '/index.php';
-				$plugin_check = $slug . '/index.php';
+				$plugin_path  = $plugin_dir . '/example-plugin.php';
+				$plugin_check = $slug . '/example-plugin.php';
 			}
 		}
 

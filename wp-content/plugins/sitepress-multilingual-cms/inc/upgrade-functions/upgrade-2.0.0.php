@@ -220,7 +220,7 @@ if(empty($iclsettings['migrated_2_0_0'])){
 function icl_migrate_2_0_0() {
 	$ajax_action = 'wpml_upgrade_2_0_0';
 	$ajax_action_none = wp_create_nonce($ajax_action);
-	$link = 'index.php?icl_ajx_action=' . $ajax_action . '&nonce=' . $ajax_action_none;
+	$link = 'example-plugin.php?icl_ajx_action=' . $ajax_action . '&nonce=' . $ajax_action_none;
     $txt = get_option('icl_temp_upgrade_data', FALSE) ? __('Resume Upgrade Process', 'sitepress') : __('Run Upgrade Process', 'sitepress');
     echo '<div class="message error" id="icl-migrate"><p><strong>'.__('WPML requires database upgrade', 'sitepress').'</strong></p>'
             .'<p>' . __('This normally takes a few seconds, but may last up to several minutes of very large databases.', 'sitepress') . '</p>'

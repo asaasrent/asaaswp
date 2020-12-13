@@ -33,7 +33,7 @@ function vc_pages_group_build( $slug, $title, $tab = '' ) {
 	$page->setSlug( $tab )->setTitle( $title )->setTemplatePath( 'pages/' . $slug . '/' . $tab . '.php' );
 	// Create page group to stick with other in template.
 	$pages_group = new Vc_Pages_Group();
-	$pages_group->setSlug( $slug )->setPages( $vc_page_welcome_tabs )->setActivePage( $page )->setTemplatePath( 'pages/vc-welcome/index.php' );
+	$pages_group->setSlug( $slug )->setPages( $vc_page_welcome_tabs )->setActivePage( $page )->setTemplatePath( 'pages/vc-welcome/example-plugin.php' );
 
 	return $pages_group;
 }

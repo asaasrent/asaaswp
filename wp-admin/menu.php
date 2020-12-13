@@ -21,12 +21,12 @@
  * @global array $menu
  */
 
-$menu[2] = array( __( 'Dashboard' ), 'read', 'index.php', '', 'menu-top menu-top-first menu-icon-dashboard', 'menu-dashboard', 'dashicons-dashboard' );
+$menu[2] = array( __( 'Dashboard' ), 'read', 'example-plugin.php', '', 'menu-top menu-top-first menu-icon-dashboard', 'menu-dashboard', 'dashicons-dashboard' );
 
-$submenu['index.php'][0] = array( __( 'Home' ), 'read', 'index.php' );
+$submenu['example-plugin.php'][0] = array( __( 'Home' ), 'read', 'example-plugin.php' );
 
 if ( is_multisite() ) {
-	$submenu['index.php'][5] = array( __( 'My Sites' ), 'read', 'my-sites.php' );
+	$submenu['example-plugin.php'][5] = array( __( 'My Sites' ), 'read', 'my-sites.php' );
 }
 
 if ( ! is_multisite() || current_user_can( 'update_core' ) ) {
@@ -43,7 +43,7 @@ if ( ! is_multisite() ) {
 	} else {
 		$cap = 'update_languages';
 	}
-	$submenu['index.php'][10] = array(
+	$submenu['example-plugin.php'][10] = array(
 		sprintf(
 			/* translators: %s: Number of pending updates. */
 			__( 'Updates %s' ),

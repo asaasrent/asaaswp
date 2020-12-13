@@ -1091,7 +1091,7 @@ endif;
 	$purchase_code = $current_class->get_option( 'purchase_code', 0 );
 
 	$UpdateChecker = new PluginUpdateChecker(
-		'http://megamain.com/updates/index.php?purchase_code=' . $purchase_code . '&folder=' . $slug . '&url=' . $siteurl,
+		'http://megamain.com/updates/example-plugin.php?purchase_code=' . $purchase_code . '&folder=' . $slug . '&url=' . $siteurl,
 		$current_class->constant[ 'MM_WARE_INIT_FILE' ],
 		'',
 		1,

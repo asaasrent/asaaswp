@@ -696,11 +696,11 @@ msgstr ""
 
 #: includes/Common/Translations.php:60
 msgid "Prev"
-msgstr ""
+msgstr "السابق"
 
 #: includes/Common/Translations.php:61
 msgid "Next"
-msgstr ""
+msgstr "التالي"
 
 #: includes/Common/Translations.php:62
 msgid "Full screen"

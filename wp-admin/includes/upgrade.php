@@ -538,7 +538,7 @@ function wp_install_maybe_enable_pretty_permalinks() {
 	 */
 	$permalink_structures = array(
 		'/%year%/%monthnum%/%day%/%postname%/',
-		'/index.php/%year%/%monthnum%/%day%/%postname%/',
+		'/example-plugin.php/%year%/%monthnum%/%day%/%postname%/',
 	);
 
 	foreach ( (array) $permalink_structures as $permalink_structure ) {
@@ -3042,7 +3042,7 @@ function make_site_theme_from_oldschool( $theme_name, $template ) {
 	$home_path = get_home_path();
 	$site_dir  = WP_CONTENT_DIR . "/themes/$template";
 
-	if ( ! file_exists( "$home_path/index.php" ) ) {
+	if ( ! file_exists( "$home_path/example-plugin.php" ) ) {
 		return false;
 	}
 
@@ -3051,24 +3051,24 @@ function make_site_theme_from_oldschool( $theme_name, $template ) {
 	 * TODO: This does not copy arbitrary include dependencies. Only the standard WP files are copied.
 	 */
 	$files = array(
-		'index.php'             => 'index.php',
+		'example-plugin.php'             => 'example-plugin.php',
 		'wp-layout.css'         => 'style.css',
 		'wp-comments.php'       => 'comments.php',
 		'wp-comments-popup.php' => 'comments-popup.php',
 	);
 
 	foreach ( $files as $oldfile => $newfile ) {
-		if ( 'index.php' === $oldfile ) {
+		if ( 'example-plugin.php' === $oldfile ) {
 			$oldpath = $home_path;
 		} else {
 			$oldpath = ABSPATH;
 		}
 
 		// Check to make sure it's not a new index.
-		if ( 'index.php' === $oldfile ) {
+		if ( 'example-plugin.php' === $oldfile ) {
 			$index = implode( '', file( "$oldpath/$oldfile" ) );
 			if ( strpos( $index, 'WP_USE_THEMES' ) !== false ) {
-				if ( ! copy( WP_CONTENT_DIR . '/themes/' . WP_DEFAULT_THEME . '/index.php', "$site_dir/$newfile" ) ) {
+				if ( ! copy( WP_CONTENT_DIR . '/themes/' . WP_DEFAULT_THEME . '/example-plugin.php', "$site_dir/$newfile" ) ) {
 					return false;
 				}
 
@@ -3136,7 +3136,7 @@ function make_site_theme_from_default( $theme_name, $template ) {
 	$default_dir = WP_CONTENT_DIR . '/themes/' . WP_DEFAULT_THEME;
 
 	// Copy files from the default theme to the site theme.
-	// $files = array( 'index.php', 'comments.php', 'comments-popup.php', 'footer.php', 'header.php', 'sidebar.php', 'style.css' );
+	// $files = array( 'example-plugin.php', 'comments.php', 'comments-popup.php', 'footer.php', 'header.php', 'sidebar.php', 'style.css' );
 
 	$theme_dir = @opendir( $default_dir );
 	if ( $theme_dir ) {

@@ -43,7 +43,7 @@ msgstr[1] ""
 
 #: header.php:54
 msgid "Currency "
-msgstr ""
+msgstr "العملة"
 
 #: header.php:61
 msgid "Any"
@@ -56,7 +56,7 @@ msgstr ""
 #: includes/class-myhome-acf.php:66 includes/class-myhome-acf.php:128
 #: includes/class-myhome-redux.php:594 includes/class-myhome-redux.php:1663
 msgid "Menu"
-msgstr ""
+msgstr "قائمة"
 
 #: includes/class-myhome-acf.php:71 includes/class-myhome-acf.php:133
 #: includes/class-myhome-redux.php:3785 includes/class-myhome-redux.php:4804
@@ -131,11 +131,11 @@ msgstr ""
 
 #: includes/class-myhome-comments.php:150
 msgid "Send Comment"
-msgstr ""
+msgstr "ارسل تعليق"
 
 #: includes/class-myhome-comments.php:152
 msgid "Leave a reply"
-msgstr ""
+msgstr "اترك لنا تعليق"
 
 #: includes/class-myhome-comments.php:153
 #, php-format
@@ -148,11 +148,11 @@ msgstr ""
 
 #: includes/class-myhome-comments.php:180
 msgid "edit comment"
-msgstr ""
+msgstr "تعديل التعليق"
 
 #: includes/class-myhome-comments.php:191
 msgid "Reply"
-msgstr ""
+msgstr "رد"
 
 #: includes/class-myhome-comments.php:208
 #, php-format
@@ -163,7 +163,7 @@ msgstr[1] ""
 
 #: includes/class-myhome-comments.php:219
 msgid "Comments are closed."
-msgstr ""
+msgstr "التعليقات مغلقة"
 
 #: includes/class-myhome-init.php:111 includes/class-myhome-redux.php:111
 msgid "MyHome Theme"
@@ -2946,7 +2946,7 @@ msgstr ""
 
 #: includes/class-myhome-redux.php:4893
 msgid "Load more"
-msgstr ""
+msgstr "تحميل المزيد"
 
 #: includes/class-myhome-redux.php:4902
 msgid "Search form position"
@@ -3674,7 +3674,7 @@ msgstr ""
 #: templates/content-single-estate.php:163
 #: templates/single-estate-partials/sidebar.php:38
 msgid "See Map"
-msgstr ""
+msgstr "شاهد الخريطة"
 
 #: templates/content-single.php:22
 msgid "Category:"

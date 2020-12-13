@@ -21,17 +21,17 @@ global $myhome_packages;
                 </div>
 				<div class="mh-pricing-table__row mh-pricing-table__row--price">
 					<?php if ( empty( $product->get_price() ) ) : ?>
-						<?php esc_html_e( 'Free', 'myhome' ); ?>
+						<?php esc_html_e( 'مجاني', 'myhome' ); ?>
 					<?php else : ?>
 						<?php echo wp_kses_post( $product->get_price_html() ); ?>
 					<?php endif; ?>
 					<!--<span class="mh-pricing-table__price-period"></span>!-->
 				</div>
 				<div class="mh-pricing-table__row">
-					<?php esc_html_e( 'Properties number:', 'myhome' ); ?><?php echo esc_html( $product->get_properties_number() ); ?>
+					<?php esc_html_e( 'رقم العقار', 'myhome' ); ?><?php echo esc_html( $product->get_properties_number() ); ?>
 				</div>
 				<div class="mh-pricing-table__row">
-					<?php esc_html_e( 'Featured number:', 'myhome' ); ?><?php echo esc_html( $product->get_featured_number() ); ?>
+					<?php esc_html_e( 'الرقم المميز:', 'myhome' ); ?><?php echo esc_html( $product->get_featured_number() ); ?>
 				</div>
 				<?php $product->is_virtual() ?>
 
@@ -41,7 +41,7 @@ global $myhome_packages;
                             href="<?php echo esc_url( $product->add_to_cart_url() ); ?>"
                             class="mdl-button mdl-button--lg mdl-js-button mdl-button--raised mdl-button--primary"
                         >
-                            <i class="fa fa-shopping-cart"></i> <?php esc_html_e( 'Buy now', 'myhome' ); ?>
+                            <i class="fa fa-shopping-cart"></i> <?php esc_html_e( 'اشتري الان', 'myhome' ); ?>
                         </a>
                     </div>
 				<?php else: ?>

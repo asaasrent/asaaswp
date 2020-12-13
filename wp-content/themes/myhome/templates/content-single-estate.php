@@ -49,7 +49,7 @@ endif; ?>
                 <div class="small-text">
                     <a href="#myhome-estate-map"><i class="flaticon-pin"></i></a>
                     <span>
-						<?php echo esc_html( $myhome_estate->get_address() ); ?>
+						<?php echo esc_html( 'شاهد الخريطة' ); ?>
 					</span>
                 </div>
 			<?php endif; ?>
@@ -94,9 +94,7 @@ endif; ?>
 						<?php if ( $myhome_estate->has_address() ) : ?>
                             <div class="mh-slider-single__address">
                                 <i class="flaticon-pin"></i>
-                                <span>
-									<?php echo esc_html( $myhome_estate->get_address() ); ?>
-								</span>
+                                <span><?php esc_html_e( 'شاهد الخريطة', 'myhome' ); ?></span>
                             </div>
 						<?php endif; ?>
 
@@ -160,7 +158,7 @@ endif;
 						<?php if ( $myhome_estate->has_map(true) ) : ?>
                             <div class="mh-estate__details__map">
                                 <a href="#map" class="smooth">
-                                    <i class="flaticon-pin"></i> <?php esc_html_e( 'See Map', 'myhome' ); ?>
+                                    <i class="flaticon-pin"></i> <?php esc_html_e( 'شاهد الخريطة', 'myhome' ); ?>
                                 </a>
                             </div>
 						<?php endif; ?>

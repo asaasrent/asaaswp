@@ -894,7 +894,7 @@ if ( ! class_exists( 'AIO_Icon_Manager' ) ) {
 			if ( false == $addindex ) {
 				return $created;
 			}
-			$index_file = trailingslashit( $folder ) . 'index.php';
+			$index_file = trailingslashit( $folder ) . 'example-plugin.php';
 			if ( file_exists( $index_file ) ) {
 				return $created;
 			}

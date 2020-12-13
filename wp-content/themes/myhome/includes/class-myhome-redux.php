@@ -4966,8 +4966,8 @@ if ( ! class_exists('My_Home_Redux')) :
                 array(
                     'id'       => 'mh-listing-load_more_button_label',
                     'type'     => 'text',
-                    'title'    => esc_html__('Load more button label', 'myhome'),
-                    'default'  => esc_html__('Load more', 'myhome'),
+                    'title'    => esc_html__('تحميل المزيد button label', 'myhome'),
+                    'default'  => esc_html__('تحميل المزيد', 'myhome'),
                     'required' => array(
                         array('mh-listing-type', '=', 'load_more')
                     )
@@ -5440,7 +5440,7 @@ if ( ! class_exists('My_Home_Redux')) :
                     'name'    => 'mh-blog-more',
                 ),
                 (object)array(
-                    'context' => esc_html__('Load more (button label)', 'myhome'),
+                    'context' => esc_html__('تحميل المزيد (button label)', 'myhome'),
                     'name'    => 'mh-listing-load_more_button_label',
                 ),
                 (object)array(

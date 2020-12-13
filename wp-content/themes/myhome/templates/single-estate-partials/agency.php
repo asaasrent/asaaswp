@@ -82,7 +82,7 @@ if ( ! $myhome_agency instanceof \MyHomeCore\Users\User ) {
 				title="<?php echo esc_attr( $myhome_agency->get_name() ); ?>"
 				class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary mdl-button--full-width"
 			>
-				<?php printf( esc_html__( 'All by %s', 'myhome' ), $myhome_agency->get_name() ); ?>
+				<?php printf( esc_html__( 'متاح للمستخدم %s', 'myhome' ), $myhome_agency->get_name() ); ?>
 			</a>
 
 		</div>

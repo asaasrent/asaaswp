@@ -3,7 +3,7 @@ $myhome_related_posts = My_Home_Theme()->layout->get_related();
 if ( count( $myhome_related_posts ) ) : ?>
 
 	<div>
-		<h3 class="mh-post-single__section__heading"><?php esc_html_e( 'Related posts', 'myhome' ); ?></h3>
+		<h3 class="mh-post-single__section__heading"><?php esc_html_e( 'البوستات ذات الصلة', 'myhome' ); ?></h3>
 		<div class="mh-grid">
 			<?php foreach ( My_Home_Theme()->layout->get_related() as $post ) : setup_postdata( $post ); ?>
 

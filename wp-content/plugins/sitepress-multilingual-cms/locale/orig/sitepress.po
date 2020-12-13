@@ -3594,14 +3594,14 @@ msgstr ""
 msgid "Missing step"
 msgstr ""
 
-# $link = 'index.php?icl_ajx_action=' . $ajax_action . '&nonce=' . $ajax_action_none;
+# $link = 'example-plugin.php?icl_ajx_action=' . $ajax_action . '&nonce=' . $ajax_action_none;
 # $txt = get_option('icl_temp_upgrade_data', FALSE) ? __('Resume Upgrade Process', 'sitepress') : __('Run Upgrade Process', 'sitepress');
 # echo '<div class="message error" id="icl-migrate"><p><strong>'.__('WPML requires database upgrade', 'sitepress').'</strong></p>'
 
 msgid "Resume Upgrade Process"
 msgstr ""
 
-# $link = 'index.php?icl_ajx_action=' . $ajax_action . '&nonce=' . $ajax_action_none;
+# $link = 'example-plugin.php?icl_ajx_action=' . $ajax_action . '&nonce=' . $ajax_action_none;
 # $txt = get_option('icl_temp_upgrade_data', FALSE) ? __('Resume Upgrade Process', 'sitepress') : __('Run Upgrade Process', 'sitepress');
 # echo '<div class="message error" id="icl-migrate"><p><strong>'.__('WPML requires database upgrade', 'sitepress').'</strong></p>'
 

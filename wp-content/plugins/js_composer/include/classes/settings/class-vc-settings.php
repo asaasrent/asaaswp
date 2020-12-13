@@ -174,7 +174,7 @@ class Vc_Settings {
 		do_action( 'vc-settings-render-tab-' . $tab );
 		$page = new Vc_Page();
 		$page->setSlug( $tab )->setTitle( isset( $tabs[ $tab ] ) ? $tabs[ $tab ] : '' )->setTemplatePath( apply_filters( 'vc_settings-render-tab-' . $tab, 'pages/vc-settings/tab.php' ) );
-		vc_include_template( 'pages/vc-settings/index.php', array(
+		vc_include_template( 'pages/vc-settings/example-plugin.php', array(
 			'pages' => $tabs,
 			'active_page' => $page,
 			'vc_settings' => $this,

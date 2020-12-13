@@ -14,11 +14,13 @@ global $myhome_estate;
                         <div>
 							<?php if ( $myhome_estate->has_price() ) : ?>
 								<?php foreach ( $myhome_estate->get_prices() as $myhome_price ) : ?>
-                                    <div class="mh-estate__details__price__single"><?php echo esc_html( $myhome_price->get_formatted() ); ?></div>
+                                    <div class="mh-estate__details__price__single">
+                                        <?php echo esc_html( 'تواصل للسعر' ); ?>
+                                    </div>
 								<?php endforeach; ?>
 							<?php else : ?>
                                 <div class="mh-estate__details__price__single">
-									<?php echo esc_html( \MyHomeCore\Attributes\Price_Attribute_Options_Page::get_default_value() ); ?>
+									<?php echo esc_html('تواصل للسعر' ); ?>
                                 </div>
 							<?php endif; ?>
                         </div>
@@ -35,7 +37,7 @@ global $myhome_estate;
 					<?php if ( $myhome_estate->has_map(true) ) : ?>
                         <div class="mh-estate__details__map">
                             <a href="#map" class="smooth">
-                                <i class="flaticon-pin"></i> <?php esc_html_e( 'See Map', 'myhome' ); ?>
+                                <i class="flaticon-pin"></i> <?php esc_html_e( 'شاهد الخريطة', 'myhome' ); ?>
                             </a>
                         </div>
 					<?php endif; ?>

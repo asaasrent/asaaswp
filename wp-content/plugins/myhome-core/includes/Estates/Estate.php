@@ -235,7 +235,7 @@ class Estate {
 		$now          = time();
 		$publish_date = strtotime( $this->post->post_date );
 
-		return sprintf( esc_html__( '%s ago', 'myhome-core' ), human_time_diff( $publish_date, $now ) );
+		return sprintf( esc_html__( 'منذ %s ', 'myhome-core' ), human_time_diff( $publish_date, $now ) );
 	}
 
 	/**

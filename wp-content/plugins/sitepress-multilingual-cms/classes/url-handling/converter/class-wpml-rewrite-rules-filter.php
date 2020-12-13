@@ -33,7 +33,7 @@ class WPML_Rewrite_Rules_Filter {
 	public function rid_of_language_param( $htaccess_string ) {
 		if ( $this->wpml_url_filters->frontend_uses_root() || $this->is_permalink_page() || $this->is_shop_page() ) {
 			foreach ( $this->active_languages as $lang_code ) {
-				foreach ( array( '', 'index.php' ) as $base ) {
+				foreach ( array( '', 'example-plugin.php' ) as $base ) {
 					$htaccess_string = str_replace(
 						'/' . $lang_code . '/' . $base,
 						'/' . $base,

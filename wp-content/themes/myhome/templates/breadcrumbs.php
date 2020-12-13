@@ -19,7 +19,7 @@ if ( $myhome_breadcrumbs && $myhome_breadcrumbs->has_elements() ) :
 				<?php if ( isset( $myhome_estate ) && $myhome_estate->has_back_to_results_button() ) : ?>
 					<div class="mh-breadcrumbs__item-wrapper">
 						<a class="mh-breadcrumbs__back" href="<?php echo esc_url( $myhome_estate->get_back_to_results_url() ); ?>">
-							<i class="fa fa-angle-left"></i> <?php esc_html_e( 'Return to Search', 'myhome' ); ?>
+							<i class="fa fa-angle-left"></i> <?php esc_html_e( 'عودة للبحث', 'myhome' ); ?>
 						</a>
 					</div>
 				<?php endif; ?>

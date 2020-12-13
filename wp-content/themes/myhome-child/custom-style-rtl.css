@@ -20,8 +20,10 @@ body
 {
 	font-family: 'Tajawal', sans-serif !important;
 }
-
-h1,h2,h3,h4,h4,h6,a,p,input,textarea,button,strong,.mh-caption__inner,.mh-currency-switcher__label,.wpml-ls-native{
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Tajawal', sans-serif !important;
+}
+a,p,input,textarea,button,strong,.mh-caption__inner,.mh-currency-switcher__label,.wpml-ls-native{
 	font-family: 'Tajawal', sans-serif !important;
 }
 .mh-heading-wrapper--right .mh-subheading, .mh-heading-wrapper--right h1, .mh-heading-wrapper--right h2, .mh-heading-wrapper--right h3, .mh-heading-wrapper--right h4, .mh-heading-wrapper--right h5, .mh-heading-wrapper--right h6 {
@@ -59,4 +61,34 @@ h1,h2,h3,h4,h4,h6,a,p,input,textarea,button,strong,.mh-caption__inner,.mh-curren
 }
 #mega_main_menu.first-lvl-align-left > .menu_holder > .menu_inner > ul {
     text-align: right !important;
+}
+.mh-search-currency-picker,.myhome-compare-button.myhome-compare-button-list,.mh-search__element #mh-currency_field .bootstrap-select.btn-group > .btn {
+    display: none;
+}
+html body .mh-header--transparent #mega_main_menu.mh-primary{
+    position: relative
+}
+
+html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder:not(.sticky_container) > .menu_inner > .nav_logo > .mobile_toggle > .mobile_button, html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder:not(.sticky_container) > .menu_inner > ul > li > .item_link, html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder:not(.sticky_container) > .menu_inner > ul > li > .item_link *,
+html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder > .menu_inner > ul > li:hover > .item_link, html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder > .menu_inner > ul > li > .item_link:hover, html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder > .menu_inner > ul > li > .item_link:focus, html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder > .menu_inner > ul > li:hover > .item_link *, html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder > .menu_inner > ul > li.current-menu-ancestor > .item_link, html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder > .menu_inner > ul > li.current-menu-ancestor > .item_link *, html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder > .menu_inner > ul > li.current-page-ancestor > .item_link *, html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder > .menu_inner > ul > li.current-post-ancestor > .item_link *, html body .mh-header--transparent #mega_main_menu.mh-primary > .menu_holder > .menu_inner > ul > li.current-menu-item > .item_link *
+{
+    color: black !important;
+}
+html[dir="rtl"] .icon {
+    -moz-transform: scaleX(1) !important;
+    -o-transform: scaleX(1)!important;
+    -webkit-transform: scaleX(1)!important;
+    transform: scaleX(1)!important;
+}
+
+.mh-post .mh-layout__content-left,.mh-attribute-property-size__property-size .mh-layout__content-left{
+    float: left !important;
+    padding-left: 0 !important;
+    padding-right: 36px !important;
+}
+.mh-post .mh-layout__sidebar-right,.mh-attribute-property-size__property-size .mh-layout__sidebar-right {
+    float: right !important;
+}
+.mh-map-wrapper__noresults__inner{
+    display: none;
 }

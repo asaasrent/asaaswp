@@ -12103,7 +12103,7 @@ msgstr "تفعيل الإضافة والعودة إلى أداة \"أنشر هذ
 msgid "Activate Plugin &amp; Run Importer"
 msgstr "تفعيل الإضافة وتشغيل أداة الاستيراد"
 
-#. translators: %s: index.php
+#. translators: %s: example-plugin.php
 #: wp-admin/includes/class-theme-upgrader.php:586
 msgid "The theme is missing the %s file."
 msgstr "القالب يفتقد ملف %s."

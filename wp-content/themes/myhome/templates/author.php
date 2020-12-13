@@ -26,7 +26,7 @@ if ( ! empty( $myhome_author_description ) ) :
 				<div class="mh-author__content__inner">
 
 					<div class="mh-author__label">
-						<?php esc_html_e( 'Post author', 'myhome' ); ?>
+						<?php esc_html_e( 'مؤلف المقال', 'myhome' ); ?>
 					</div>
 
 					<h3 class="mh-author__name">

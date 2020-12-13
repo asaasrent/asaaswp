@@ -830,7 +830,7 @@ function switch_theme( $stylesheet ) {
 }
 
 /**
- * Checks that the current theme has 'index.php' and 'style.css' files.
+ * Checks that the current theme has 'example-plugin.php' and 'style.css' files.
  *
  * Does not initially check the default theme, which is the fallback and should always exist.
  * But if it doesn't exist, it'll fall back to the latest core default theme that does exist.
@@ -857,7 +857,7 @@ function validate_current_theme() {
 		return true;
 	}
 
-	if ( ! file_exists( get_template_directory() . '/index.php' ) ) {
+	if ( ! file_exists( get_template_directory() . '/example-plugin.php' ) ) {
 		// Invalid.
 	} elseif ( ! file_exists( get_template_directory() . '/style.css' ) ) {
 		// Invalid.

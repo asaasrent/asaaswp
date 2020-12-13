@@ -47,7 +47,7 @@ class WPML_Whip_Requirements {
 	 * Load Whip.
 	 */
 	public function load_whip() {
-		if ( ! ( 'index.php' === $GLOBALS['pagenow'] && current_user_can( 'manage_options' ) ) ) {
+		if ( ! ( 'example-plugin.php' === $GLOBALS['pagenow'] && current_user_can( 'manage_options' ) ) ) {
 			return;
 		}
 

@@ -714,7 +714,7 @@ if ( ! function_exists( 'bsf_registration_page_url' ) ) {
 				if ( is_multisite() ) {
 					return network_admin_url( 'admin.php?page=bsf-registration' . $append );
 				} else {
-					return admin_url( 'index.php?page=bsf-registration' . $append );
+					return admin_url( 'example-plugin.php?page=bsf-registration' . $append );
 				}
 			}
 		}

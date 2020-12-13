@@ -22,7 +22,7 @@ $wp_file_descriptions = array(
 	'404.php'               => __( '404 Template' ),
 	'link.php'              => __( 'Links Template' ),
 	// Archives.
-	'index.php'             => __( 'Main Index Template' ),
+	'example-plugin.php'             => __( 'Main Index Template' ),
 	'archive.php'           => __( 'Archives' ),
 	'author.php'            => __( 'Author Template' ),
 	'taxonomy.php'          => __( 'Taxonomy Template' ),
@@ -1867,7 +1867,7 @@ function WP_Filesystem( $args = false, $context = false, $allow_relaxed_file_own
 		define( 'FS_CHMOD_DIR', ( fileperms( ABSPATH ) & 0777 | 0755 ) );
 	}
 	if ( ! defined( 'FS_CHMOD_FILE' ) ) {
-		define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 ) );
+		define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'example-plugin.php' ) & 0777 | 0644 ) );
 	}
 
 	return true;

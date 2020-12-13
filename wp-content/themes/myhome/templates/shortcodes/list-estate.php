@@ -119,7 +119,10 @@ global $myhome_estate_list;
 									<?php endforeach; ?>
 								<?php else : ?>
                                     <div class="mh-price__contact">
-										<?php echo esc_html( $myhome_estate->get_contact_for_price_text() ); ?>
+                                        <?php if($myhome_estate->get_contact_for_price_text() != 'Contact for price')
+                                            echo esc_html( $myhome_estate->get_contact_for_price_text() );
+                                            else echo 'تواصل للسعر'
+                                        ?>
                                     </div>
 								<?php endif; ?>
                             </div>
@@ -185,7 +188,7 @@ global $myhome_estate_list;
                                                         target="_blank"
 													<?php endif; ?>
                                                 >
-													<?php esc_html_e( 'Details', 'myhome' ); ?>
+													<?php esc_html_e( 'التفاصيل', 'myhome' ); ?>
                                                     <span class="mdl-button__icon-right">
                                                     <i class="fa fa-angle-right"></i>
                                                 </span>

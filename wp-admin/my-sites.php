@@ -35,7 +35,7 @@ if ( 'updateblogsettings' === $action && isset( $_POST['primary_blog'] ) ) {
 }
 
 $title       = __( 'My Sites' );
-$parent_file = 'index.php';
+$parent_file = 'example-plugin.php';
 
 get_current_screen()->add_help_tab(
 	array(

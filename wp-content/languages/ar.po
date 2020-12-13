@@ -9203,7 +9203,7 @@ msgstr "القالب الرئيسي (الأب) غير موجود. من فضلك 
 msgid "https://developer.wordpress.org/themes/advanced-topics/child-themes/"
 msgstr "https://developer.wordpress.org/themes/advanced-topics/child-themes/"
 
-#. translators: 1: index.php, 2: Documentation URL, 3: style.css
+#. translators: 1: example-plugin.php, 2: Documentation URL, 3: style.css
 #: wp-includes/class-wp-theme.php:318
 msgid "Template is missing. Standalone themes need to have a %1$s template file. <a href=\"%2$s\">Child themes</a> need to have a Template header in the %3$s stylesheet."
 msgstr "أحد ملفات القالب مفقود. القوالب القائمة بذاتها يجب أن تحتوي على الملف %1$s. <a href=\"%2$s\">القوالب الفرعية</a> يجب أن تحتوي على ترويسة Template في ملف التنسيق %3$s."

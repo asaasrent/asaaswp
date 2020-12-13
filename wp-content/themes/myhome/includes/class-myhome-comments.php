@@ -42,7 +42,7 @@ if ( ! class_exists( 'My_Home_Comments' ) ) :
 			?>
 			<p class="form-submit">
 				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
-					<?php esc_html_e( 'Send comment', 'myhome' ); ?>
+					<?php esc_html_e( 'أرسل التعليق', 'myhome' ); ?>
 				</button>
 				<input type="hidden" name="comment_parent" id="comment_parent" value="0">
 				<input type="hidden" name="comment_post_ID" value="<?php echo esc_attr( $postId ); ?>" id="comment_post_ID">
@@ -85,8 +85,8 @@ if ( ! class_exists( 'My_Home_Comments' ) ) :
 		 */
 		public function nav() {
 			esc_html_e( 'Comment navigation', 'myhome' );
-			previous_comments_link( esc_html__( '&larr; Older Comments', 'myhome' ) );
-			next_comments_link( esc_html__( 'Newer Comments &rarr;', 'myhome' ) );
+			previous_comments_link( esc_html__( '&larr; التعليقات الاقدم', 'myhome' ) );
+			next_comments_link( esc_html__( 'التعليقات الاحدث &rarr;', 'myhome' ) );
 		}
 
 		/*
@@ -140,17 +140,17 @@ if ( ! class_exists( 'My_Home_Comments' ) ) :
 						wp_login_url( get_permalink() )
 					) . '</p>',
 				'logged_in_as'         => '<p class="comments-logged">' . sprintf(
-						wp_kses( __( 'Logged in as <a href="%1$s">%2$s</a>.', 'myhome' ), array( 'a' => array( 'href' => array() ) ) ),
+						wp_kses( __( 'تسجيل الدخول as <a href="%1$s">%2$s</a>.', 'myhome' ), array( 'a' => array( 'href' => array() ) ) ),
 						get_edit_user_link(),
 						wp_get_current_user()->display_name )
 				                          . ' <a href="' . wp_logout_url( get_permalink() ) . '" title="'
-				                          . esc_attr__( 'Log out of this account', 'myhome' ) . '">'
-				                          . esc_html__( 'Log out &raquo;', 'myhome' ) . '</a></p>',
+				                          . esc_attr__( 'تسجيل الخروج', 'myhome' ) . '">'
+				                          . esc_html__( 'تسجيل الخروج &raquo;', 'myhome' ) . '</a></p>',
 				'class_submit'         => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary mdl-button--lg',
-				'label_submit'         => esc_html__( 'Send Comment', 'myhome' ),
+				'label_submit'         => esc_html__( 'أرسل التعليق', 'myhome' ),
 				'class_reply'          => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary mdl-button--lg',
-				'title_reply'          => esc_html__( 'Leave a reply', 'myhome' ),
-				'title_reply_to'       => esc_html__( 'Comment to %s', 'myhome' )
+				'title_reply'          => esc_html__( 'اترك لنا تعليق', 'myhome' ),
+				'title_reply_to'       => esc_html__( 'تعليق لـ %s', 'myhome' )
 			);
 			comment_form( $args );
 		}
@@ -163,7 +163,7 @@ if ( ! class_exists( 'My_Home_Comments' ) ) :
 		public function comment_cb( $comment, $args, $depth ) { ?>
 			<?php if ( ! $comment->comment_approved ) : ?>
 				<em class="mh-comment-awaiting-moderation">
-					<?php esc_html_e( 'Your comment is awaiting moderation', 'myhome' ); ?>
+					<?php esc_html_e( 'التعليق بانتظار القبول', 'myhome' ); ?>
 				</em>
 			<?php endif; ?>
 		<div <?php comment_class( empty( $args['has_children'] ) ? 'mh-comment' : 'mh-comment parent' ); ?> id="comment-<?php comment_ID(); ?>">
@@ -177,7 +177,7 @@ if ( ! class_exists( 'My_Home_Comments' ) ) :
 				<div class="mh-comment__date">
 					<?php echo esc_html( get_comment_date() );
 					edit_comment_link(
-						'<span class="comment-edit-icon"></span><i class="fa fa-pencil"></i>' . esc_html__( 'edit comment', 'myhome' ),
+						'<span class="comment-edit-icon"></span><i class="fa fa-pencil"></i>' . esc_html__( 'تعديل التعليق', 'myhome' ),
 						'',
 						''
 					); ?>
@@ -188,7 +188,7 @@ if ( ! class_exists( 'My_Home_Comments' ) ) :
 
 
 				<?php comment_reply_link( array_merge( $args, array(
-					'reply_text' => esc_html__( 'Reply', 'myhome' ) . '<i class="fa fa-reply" aria-hidden="true"></i>',
+					'reply_text' => esc_html__( 'رد', 'myhome' ) . '<i class="fa fa-reply" aria-hidden="true"></i>',
 					'depth'      => $depth,
 					'max_depth'  => $this->max_depth,
 					'before'     => '',
@@ -205,7 +205,7 @@ if ( ! class_exists( 'My_Home_Comments' ) ) :
 		 */
 		public function number_text() {
 			printf(
-				_n( '1 comment', '%1$s comments', get_comments_number(), 'myhome' ),
+				_n( '1 تعليق', '%1$s التعليقات', get_comments_number(), 'myhome' ),
 				number_format_i18n( get_comments_number() )
 			);
 		}
@@ -216,7 +216,7 @@ if ( ! class_exists( 'My_Home_Comments' ) ) :
 		 * Text displayed when comments are closed
 		 */
 		public function closed() {
-			esc_html_e( 'Comments are closed.', 'myhome' );
+			esc_html_e( 'التعليقات مغلقة', 'myhome' );
 		}
 
 	}
