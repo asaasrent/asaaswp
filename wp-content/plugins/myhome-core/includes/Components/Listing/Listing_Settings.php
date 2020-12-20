@@ -52,7 +52,8 @@ class Listing_Settings {
 			'show_sort_by_price_high_to_low' => true,
 			'show_sort_by_price_low_to_high' => true,
 			'show_sort_by_alphabetically'    => false,
-			'hide_save_search'               => false
+			'hide_save_search'               => false,
+            'api'                            => true
 		)
 	);
 
@@ -158,7 +159,69 @@ class Listing_Settings {
 	/**
 	 * @return array
 	 */
-	private function get_estates() {
+    function get_from_api(){
+        $url = 'https://marketing-api.asaas.sa/api/get_offers';
+        $arguments = array(
+            'headers' => array(
+                'office-number' => '9665704',
+            ),
+        );
+        $response = wp_remote_get($url, $arguments);
+        $offerArray = [];
+        if(is_wp_error($response)){
+            echo 'Error !!! ';
+        }
+        else{
+            $body = wp_remote_retrieve_body( $response );
+            $data = json_decode(json_encode($body), true);
+            $bodyData= json_decode($data, true);
+            if(!empty($data)) {
+                $offerArray = $bodyData['data'];
+            }
+        }
+        $data_array = [];
+        foreach ($offerArray['data'] as $row){
+            $data_array[] = [
+                'id' => $row['id'],
+                'name' => $row['title'],
+                'slug'=>'',
+                'has_price'=>1,
+                'link' => $row['image_url'],
+                'excerpt' => '',
+                'image_srcset' => '',
+                'image' => $row['image_url'],
+                'attributes' => [
+                    [
+
+                        'name' => '&gt; نوع العقار',
+                        'slug' => '&gt; property-type',
+                        'has_archive' => '&gt; 1',
+                        'values' => '&gt'
+                    ]
+                ],
+                'address' => $row['city_name'],
+                'days_ago' => $row['created_at'],
+                'is_featured' => $row['is_featured'],
+                'offer_type' => [ ],
+                'status' => $row['status'],
+                'payment_status' => $row['status'],
+                'attribute_classes' => '',
+                'gallery' => [],
+                'date' => $row['created_at'],
+                'price' => [
+                    [
+
+                        'price' => $row['price'],
+                        'is_range' => 1,
+                    ]
+                ]
+            ];
+        }
+        return  $data_array;
+    }
+
+    private function get_estates($api = true) {
+
 		$estates_factory = new Estate_Factory( [], true );
 		$args            = array_merge( $this->args, $_GET );
 
@@ -229,9 +292,9 @@ class Listing_Settings {
 				$estates_factory->add_filter( $attribute->get_estate_filter( $values, $compare ) );
 			}
 		}
-
+//        print_r($this->get_from_api());exit();
 		return array(
-			'estates'      => $estates_factory->get_results()->get_data(),
+			'estates'      => $this->get_from_api(),
 			'totalResults' => $estates_factory->get_found_number()
 		);
 	}

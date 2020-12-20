@@ -27,7 +27,7 @@ class Listing {
 	 * @param $content
 	 */
 	public function display( $content = null ) {
-		$content = wpb_js_remove_wpautop( $content );
+	    $content = wpb_js_remove_wpautop( $content );
 		$class   = '';
 		$config  = $this->settings->get_config();
 		if ( $config['search_form_position'] == 'left' ) {

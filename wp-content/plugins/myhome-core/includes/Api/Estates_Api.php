@@ -19,35 +19,47 @@ class Estates_Api {
 	/**
 	 * Estates_Api constructor.
 	 */
+
 	public function __construct() {
 		/*
 		 * Set endpoints
 		 */
+        $url = 'https://marketing-api.asaas.sa/api/get_offers';
+        $arguments = array(
+            'headers' => array(
+                'office-number' => '9665704',
+            ),
+        );
+        $response = wp_remote_get($url, $arguments);
+        $offerArray = [];
+        if(is_wp_error($response)){
+            echo 'Error !!! ';
+        }
+        else{
+            $body = wp_remote_retrieve_body( $response );
+            $data = json_decode(json_encode($body), true);
+            $bodyData= json_decode($data->data, true);
+            if(!empty($data)) {
+                $offerArray = $bodyData;
+            }
+        }
+        self::get($response);
 		add_action(
-			'rest_api_init', function () {
-			register_rest_route(
-				'myhome/v1', '/estates', array(
-					'methods'  => 'POST',
-					'callback' => array( $this, 'get' ),
-                    'permission_callback' => '__return_true',
-                )
-			);
-		}
+			'rest_api_init',   self::get($offerArray)
 		);
 
-		add_action(
-			'rest_api_init', function () {
-			register_rest_route(
-				'myhome/v1', '/suggestions-attributes', array(
-					'methods'  => 'GET',
-					'callback' => array( $this, 'suggestions_attributes' ),
-                    'permission_callback' => '__return_true',
-                )
-			);
-		}
-		);
+//		add_action(
+//			'rest_api_init', function () {
+//			register_rest_route(
+//				'myhome/v1', '/suggestions-attributes', array(
+//					'methods'  => 'GET',
+//					'callback' => array( $this, 'suggestions_attributes' ),
+//                    'permission_callback' => '__return_true',
+//                )
+//			);
+//		}
+//		);
 	}
-
 	public function suggestions_attributes( $request ) {
 		$params = $request->get_params();
 
@@ -88,76 +100,87 @@ class Estates_Api {
 		} else {
 			$params = $request;
 		}
-		$filters         = empty( $params['data'] ) ? array() : $params['data'];
-		$estates_factory = new Estate_Factory( [], true );
+		$databody = $params['body'];
 
-		foreach ( $filters as $filter ) {
-			$attribute = Attribute_Factory::get_by_slug( $filter['key'] );
-			if ( empty( $attribute ) ) {
-				continue;
-			}
+        $params = json_decode($databody, true);
+     //   print_r($params['data']);
+    //    var_dump(empty( $params['data'] ) ? 'true' : 'false' );
+        $filters         = empty( $params['data'] ) ? [] : $params['data'];
+//       print_r($filters);
+        $estates_factory = new Estate_Factory();
+    $mydata=   $estates_factory->get_results($filters);
+    //var_dump($mydata);exit();
 
-			$values = new Attribute_Values();
-			foreach ( $filter['values'] as $value ) {
-				$values->add( new Attribute_Value( $value['name'], $value['name'], '', $value['value'] ) );
-			}
-			$estates_factory->add_filter( $attribute->get_estate_filter( $values, $filter['compare'] ) );
+//		foreach ( $filters['data'] as $filter ) {
+//
+//            $attribute = Attribute_Factory::get_by_slug( $filter['id'] );
+//			if ( empty( $attribute ) ) {
+//				continue;
+//			}
+
+//			$values = new Attribute_Values();
+////			foreach ( $filter as $value ) {
+//				$values->add( new Attribute_Value( $filter['title'], $filter['title'], '', $filter['value'] ) );
+////			}
+//			$estates_factory->add_filter( $attribute->get_estate_filter( $values, $filter['compare'] ) );
+
+		//}
+
+
+//		if ( isset( $params['currency'] ) && $params['currency'] != \MyHomeCore\My_Home_Core()->currency ) {
+//			setcookie( 'myhome_currency', $params['currency'], time() + 3600, "/" );
+//			\MyHomeCore\My_Home_Core()->currency = $params['currency'];
+//		}
+
+		if ( isset( $params['current_page'] ) ) {
+                $estates_factory->set_page( $params['current_page'] );
 		}
 
-		if ( isset( $params['currency'] ) && $params['currency'] != \MyHomeCore\My_Home_Core()->currency ) {
-			setcookie( 'myhome_currency', $params['currency'], time() + 3600, "/" );
-			\MyHomeCore\My_Home_Core()->currency = $params['currency'];
+//		if ( isset( $params['sortBy'] ) ) {
+//			$estates_factory->set_sort_by( $params['sortBy'] );
+//		}
+//
+//		if ( isset( $params['limit'] ) ) {
+//			$estates_factory->set_limit( $params['limit'] );
+//		}
+
+//		if ( ! empty( $params['mh_lang'] ) && function_exists( 'icl_object_id' ) ) {
+//			\MyHomeCore\My_Home_Core()->current_language = $params['mh_lang'];
+//			global $sitepress;
+//			$sitepress->switch_lang( $params['mh_lang'] );
+//		}
+
+		if ( isset( $params['id'] ) ) {
+			$estates_factory->set_user_id( $params['id'] );
 		}
 
-		if ( isset( $params['page'] ) ) {
-			$estates_factory->set_page( $params['page'] );
-		}
+//		if ( isset( $params['users'] ) ) {
+//			$estates_factory->set_users( $params['users'] );
+//		}
+//
+//		if ( isset( $params['estates__in'] ) ) {
+//			$estates_factory->set_estates__in( $params['estates__in'] );
+//		}
 
-		if ( isset( $params['sortBy'] ) ) {
-			$estates_factory->set_sort_by( $params['sortBy'] );
-		}
+//		if ( isset( $params['featured'] ) ) {
+//			$estates_factory->set_featured_only();
+//		}
+//
+//		if ( isset( $params['published_after'] ) ) {
+//			$estates_factory->set_published_after( $params['published_after'] );
+//		}
 
-		if ( isset( $params['limit'] ) ) {
-			$estates_factory->set_limit( $params['limit'] );
-		}
-
-		if ( ! empty( $params['mh_lang'] ) && function_exists( 'icl_object_id' ) ) {
-			\MyHomeCore\My_Home_Core()->current_language = $params['mh_lang'];
-			global $sitepress;
-			$sitepress->switch_lang( $params['mh_lang'] );
-		}
-
-		if ( isset( $params['userId'] ) ) {
-			$estates_factory->set_user_id( $params['userId'] );
-		}
-
-		if ( isset( $params['users'] ) ) {
-			$estates_factory->set_users( $params['users'] );
-		}
-
-		if ( isset( $params['estates__in'] ) ) {
-			$estates_factory->set_estates__in( $params['estates__in'] );
-		}
-
-		if ( isset( $params['featured'] ) ) {
-			$estates_factory->set_featured_only();
-		}
-
-		if ( isset( $params['published_after'] ) ) {
-			$estates_factory->set_published_after( $params['published_after'] );
-		}
-
-		if ( isset( $params['map'] ) && $params['map'] == 'true' ) {
-			$estates_factory->set_limit( Estate_Factory::NO_LIMIT );
-
-			return array(
-				'results'       => $estates_factory->get_results()->get_data( Estates::MARKER_DATA ),
-				'found_results' => $estates_factory->get_found_number()
-			);
-		}
+//		if ( isset( $params['map_lat'] ) && $params['map_lng'] == 'true' ) {
+//			$estates_factory->set_limit( Estate_Factory::NO_LIMIT );
+//
+//			return array(
+//				'results'       => $estates_factory->get_results()->get_data( Estates::MARKER_DATA ),
+//				'found_results' => $estates_factory->get_found_number()
+//			);
+//		}
 
 		return array(
-			'results'       => $estates_factory->get_results()->get_data(),
+			'results'       => $filters,
 			'found_results' => $estates_factory->get_found_number()
 		);
 	}
