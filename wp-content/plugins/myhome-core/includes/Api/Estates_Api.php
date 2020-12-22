@@ -140,6 +140,7 @@ class Estates_Api {
 //			$estates_factory->set_sort_by( $params['sortBy'] );
 //		}
 //
+
 //		if ( isset( $params['limit'] ) ) {
 //			$estates_factory->set_limit( $params['limit'] );
 //		}

@@ -180,13 +180,13 @@ class Listing_Settings {
             }
         }
         $data_array = [];
-        foreach ($offerArray['data'] as $row){
+        foreach (array_slice($offerArray['data'], 0, 10) as $row){
             $data_array[] = [
                 'id' => $row['id'],
                 'name' => $row['title'],
                 'slug'=>'',
                 'has_price'=>1,
-                'link' => $row['image_url'],
+                'link' => get_site_url($row['id'],'/?post_type=estate&p='.$row['id'],null),
                 'excerpt' => '',
                 'image_srcset' => '',
                 'image' => $row['image_url'],
