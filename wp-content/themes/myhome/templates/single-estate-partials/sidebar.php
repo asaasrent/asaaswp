@@ -26,41 +26,41 @@ global $myhome_estate;
                         </div>
                     </div>
 
-					<?php if ( $myhome_estate->agent->has_phone() ) : ?>
-                        <div class="mh-estate__details__phone">
-                            <a href="tel:<?php echo esc_attr( $myhome_estate->agent->get_phone_href() ); ?>">
-                                <i class="flaticon-phone"></i> <?php echo esc_html( $myhome_estate->agent->get_phone() ); ?>
-                            </a>
-                        </div>
-					<?php endif; ?>
+<!--					--><?php //if ( $myhome_estate->agent->has_phone() !== null ) : ?>
+<!--                        <div class="mh-estate__details__phone">-->
+<!--                            <a href="tel:--><?php //echo esc_attr( $myhome_estate->agent->get_phone_href() ); ?><!--">-->
+<!--                                <i class="flaticon-phone"></i> --><?php //echo esc_html( $myhome_estate->agent->get_phone() ); ?>
+<!--                            </a>-->
+<!--                        </div>-->
+<!--					--><?php //endif; ?>
 
 					<?php if ( $myhome_estate->has_map(true) ) : ?>
                         <div class="mh-estate__details__map">
                             <a href="#map" class="smooth">
-                                <i class="flaticon-pin"></i> <?php esc_html_e( 'شاهد الخريطة', 'myhome' ); ?>
+                                <i class="flaticon-pin"></i> <?php esc_html_e( 'موقع العقار على الخريطة', 'myhome' ); ?>
                             </a>
                         </div>
 					<?php endif; ?>
 
                 </div>
             </div>
-			<?php if ( $myhome_estate->is_favorite_enabled() || $myhome_estate->is_compare_enabled() ) : ?>
-                <div class="mh-estate__add-to">
-					<?php if ( $myhome_estate->is_favorite_enabled() ) : ?>
-                        <add-to-favorite-single
-                                class="myhome-add-to-favorite-single"
-                                :property-id="<?php echo esc_attr( $myhome_estate->get_ID() ); ?>"
-                        ></add-to-favorite-single>
-					<?php endif; ?>
-
-					<?php if ( $myhome_estate->is_compare_enabled() ) : ?>
-                        <compare-button-single
-                                class="myhome-compare-button-single"
-                                :estate="<?php echo esc_attr( json_encode( $myhome_estate->get_data() ) ); ?>"
-                        ></compare-button-single>
-					<?php endif; ?>
-                </div>
-			<?php endif; ?>
+<!--			--><?php //if ( $myhome_estate->is_favorite_enabled() || $myhome_estate->is_compare_enabled() ) : ?>
+<!--                <div class="mh-estate__add-to">-->
+<!--					--><?php //if ( $myhome_estate->is_favorite_enabled() ) : ?>
+<!--                        <add-to-favorite-single-->
+<!--                                class="myhome-add-to-favorite-single"-->
+<!--                                :property-id="--><?php //echo esc_attr( $myhome_estate->get_ID() ); ?><!--"-->
+<!--                        ></add-to-favorite-single>-->
+<!--					--><?php //endif; ?>
+<!---->
+<!--					--><?php //if ( $myhome_estate->is_compare_enabled() ) : ?>
+<!--                        <compare-button-single-->
+<!--                                class="myhome-compare-button-single"-->
+<!--                                :estate="--><?php //echo esc_attr( json_encode( $myhome_estate->get_data() ) ); ?><!--"-->
+<!--                        ></compare-button-single>-->
+<!--					--><?php //endif; ?>
+<!--                </div>-->
+<!--			--><?php //endif; ?>
 
 			<?php if ( $myhome_estate->has_sidebar_elements() ) : ?>
 				<?php foreach ( $myhome_estate->get_sidebar_elements() as $myhome_sidebar_element ) : ?>
@@ -99,14 +99,14 @@ global $myhome_estate;
 		$myhome_estate->contact_form();
 	endif;
 
-	if ( $myhome_estate->has_user_profile() ) :
-		$myhome_estate->user_profile();
-	endif;
-
-	if ( $myhome_estate->has_agency_profile() ) :
-		$myhome_estate->agency_profile();
-	endif;
-
+//	if ( $myhome_estate->has_user_profile() ) :
+//		$myhome_estate->user_profile();
+//	endif;
+//
+//	if ( $myhome_estate->has_agency_profile() ) :
+//		$myhome_estate->agency_profile();
+//	endif;
+//
 	dynamic_sidebar( 'mh-property-sidebar' );
 	?>
 </aside>

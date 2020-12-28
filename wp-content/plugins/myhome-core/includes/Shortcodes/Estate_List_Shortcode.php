@@ -8,6 +8,7 @@ use MyHomeCore\Attributes\Attribute_Value;
 use MyHomeCore\Attributes\Attribute_Values;
 use MyHomeCore\Attributes\Price_Attribute;
 use MyHomeCore\Components\Listing\Form\Field;
+use MyHomeCore\Components\Listing\Listing_Settings;
 use MyHomeCore\Estates\Estate_Factory;
 use MyHomeCore\Estates\Estates;
 use MyHomeCore\Users\Users_Factory;
@@ -51,6 +52,7 @@ class Estate_List_Shortcode extends Shortcode {
 		}
 
 		global $myhome_estates;
+
 		$myhome_estates = $this->get_estates( $args );
 
 		return $this->get_template();
@@ -112,6 +114,8 @@ class Estate_List_Shortcode extends Shortcode {
 				}
 			}
 		}
+
+//        print_r($estate_factory->get_results());
 
 		return $estate_factory->get_results();
 	}

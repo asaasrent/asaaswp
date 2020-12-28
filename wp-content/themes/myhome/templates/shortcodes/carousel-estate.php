@@ -36,6 +36,7 @@ global $myhome_estate_carousel;
                             </div>
 						<?php else: ?>
                             <div class="mh-thumbnail__inner mh-thumbnail__inner--no_image">
+                                الصورة غير موجودة
                                 <div class="mh-thumbnail__inner--no_image__icon">
                                     <svg enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512"
                                          xml:space="preserve" xmlns="http://www.w3.org/2000/svg">

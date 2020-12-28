@@ -49,7 +49,7 @@ endif; ?>
                 <div class="small-text">
                     <a href="#myhome-estate-map"><i class="flaticon-pin"></i></a>
                     <span>
-						<?php echo esc_html( 'شاهد الخريطة' ); ?>
+						<?php echo esc_html( 'موقع العقار على الخريطة' ); ?>
 					</span>
                 </div>
 			<?php endif; ?>
@@ -91,10 +91,10 @@ endif; ?>
                     </div>
                     <div class="mh-slider-single__bottom">
 
-						<?php if ( $myhome_estate->has_address() ) : ?>
+						<?php if (! $myhome_estate->has_address() ) : ?>
                             <div class="mh-slider-single__address">
                                 <i class="flaticon-pin"></i>
-                                <span><?php esc_html_e( 'شاهد الخريطة', 'myhome' ); ?></span>
+                                <span><?php esc_html_e( 'موقع العقار على الخريطة', 'myhome' ); ?></span>
                             </div>
 						<?php endif; ?>
 
@@ -123,7 +123,7 @@ if ( $myhome_estate->has_breadcrumbs() || $myhome_estate->has_back_to_results_bu
 endif;
 ?>
 
-    <div class="mh-layout position-relative <?php echo esc_attr( $myhome_estate->get_attribute_classes() ); ?>">
+<div class="mh-layout position-relative <?php echo esc_attr( $myhome_estate->get_attribute_classes() ); ?>">
         <div class="<?php echo esc_attr( $myhome_estate->get_container_class() ); ?>">
 
             <div class="mh-display-mobile">
@@ -145,13 +145,13 @@ endif;
                                 </div>
                             </div>
 
-							<?php if ( $myhome_estate->agent->has_phone() ) : ?>
-                                <div class="mh-estate__details__phone">
-                                    <a href="tel:<?php echo esc_attr( $myhome_estate->agent->get_phone_href() ); ?>">
-                                        <i class="flaticon-phone"></i> <?php echo esc_html( $myhome_estate->agent->get_phone() ); ?>
-                                    </a>
-                                </div>
-							<?php endif; ?>
+<!--							--><?php //if ( $myhome_estate->agent->has_phone() ) : ?>
+<!--                                <div class="mh-estate__details__phone">-->
+<!--                                    <a href="tel:--><?php //echo esc_attr( $myhome_estate->agent->get_phone_href() ); ?><!--">-->
+<!--                                        <i class="flaticon-phone"></i> --><?php //echo esc_html( $myhome_estate->agent->get_phone() ); ?>
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--							--><?php //endif; ?>
 
 						<?php endif; ?>
 
@@ -232,6 +232,20 @@ endif;
 		<?php endif; ?>
     </div>
 
-<?php if ( $myhome_estate->has_map( true ) ) : ?>
-	<?php $myhome_estate->map(); ?>
-<?php endif; ?>
+
+
+<!---->
+<?php if ( $myhome_estate->has_map( true ) ) :
+    ?>
+
+    <h3 class="text-center">
+        موقع العقار على الخريطة
+    </h3>
+<?php
+    else:?>
+        <h3 class="text-center">
+            لا يوجد موقع محدد على الخريطة
+        </h3>
+<?php  endif;
+    $myhome_estate->map();
+?>

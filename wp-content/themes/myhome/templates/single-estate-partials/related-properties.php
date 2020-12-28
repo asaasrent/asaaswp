@@ -10,7 +10,9 @@ if ( count( $myhome_related_properties ) ) :
     <section class="mh-estate__related">
 
 		<?php if ( $myhome_estate_element->has_label() ) : ?>
-            <h3 class="mh-estate__section__heading"><?php echo esc_html( $myhome_estate_element->get_label() ); ?></h3>
+            <h3 class="mh-estate__section__heading">
+                عقارات ذات صلة
+            </h3>
 		<?php endif; ?>
 
         <div class="mh-grid">
@@ -48,6 +50,7 @@ if ( count( $myhome_related_properties ) ) :
                                 </div>
 							<?php else: ?>
                                 <div class="mh-thumbnail__inner mh-thumbnail__inner--no_image">
+                                    الصورة غير موجودة
                                     <div class="mh-thumbnail__inner--no_image__icon">
                                         <svg enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512"
                                              xml:space="preserve" xmlns="http://www.w3.org/2000/svg">

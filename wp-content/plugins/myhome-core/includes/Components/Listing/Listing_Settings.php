@@ -159,7 +159,7 @@ class Listing_Settings {
 	/**
 	 * @return array
 	 */
-    function get_from_api(){
+    public static function get_data_from_api($result_num = null){
         $url = 'https://marketing-api.asaas.sa/api/get_offers';
         $arguments = array(
             'headers' => array(
@@ -180,7 +180,17 @@ class Listing_Settings {
             }
         }
         $data_array = [];
-        foreach (array_slice($offerArray['data'], 0, 10) as $row){
+        $custom_offer_array = [];
+        if(is_numeric($result_num)){
+            $custom_offer_array = array_slice($offerArray['data'], 0, $result_num);
+        }
+        else{
+            $custom_offer_array = array_slice($offerArray['data'], 0, 10);
+        }
+        return  $custom_offer_array;
+    }
+    public static function get_offer_from_api($custom_offer_array){
+        foreach ($custom_offer_array as $row){
             $data_array[] = [
                 'id' => $row['id'],
                 'name' => $row['title'],
@@ -210,7 +220,6 @@ class Listing_Settings {
                 'date' => $row['created_at'],
                 'price' => [
                     [
-
                         'price' => $row['price'],
                         'is_range' => 1,
                     ]
@@ -219,7 +228,45 @@ class Listing_Settings {
         }
         return  $data_array;
     }
+    public static function get_offer_post_from_api($post){
+        $data_array = [];
+        foreach ($post as $row) {
+            $data_array[] = (object) [
+                'ID' => $row['id'],
+                'post_author' => $row['title'],
+                'post_title' => $row['title'],
+                'post_name' => $row['title'],
+                'post_image' => $row['image_url'],
+                'post_link' => get_site_url($row['id'],'/'.$row['title'],null),
+                'post_content' => $row['description'],
+                'menu_order' => 0,
+                'guid' => get_site_url($row['id'],'/'.$row['title'],null),
+                'post_excerpt' => '',
+                'post_mime_type' => '',
+                'comment_count' => 0,
+                'filter' => 'row',
+                'post_type' => 'estate',
+                'post_parent' => 0,
+                'post_content_filtered' => '',
+                'pinged' => '',
+                'post_status' => $row['status'],
+                'comment_status' => 'closed',
+                'ping_status' => 'closed',
+                'payment_status' => $row['status'],
+                'post_password' => '',
+                'to_ping' => '',
+                'post_date' => $row['created_at'],
+                'post_modified' => $row['updated_at'],
+                'post_modified_gmt' => $row['updated_at'],
+                'post_date_gmt' => $row['created_at'],
+                ];
+        }
+        return  $data_array;
+    }
 
+    /**
+     * @return array
+     */
     private function get_estates($api = true) {
 
 		$estates_factory = new Estate_Factory( [], true );
@@ -292,9 +339,9 @@ class Listing_Settings {
 				$estates_factory->add_filter( $attribute->get_estate_filter( $values, $compare ) );
 			}
 		}
-//        print_r($this->get_from_api());exit();
+		$original_array = $this->get_data_from_api();
 		return array(
-			'estates'      => $this->get_from_api(),
+			'estates'      => $this->get_offer_from_api($original_array),
 			'totalResults' => $estates_factory->get_found_number()
 		);
 	}

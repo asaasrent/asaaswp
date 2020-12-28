@@ -246,7 +246,7 @@ class Estate_Writer {
 	public function map() {
 		$estate_map = new Estate_Map( $this->estate );
 		$estate_map->display();
-	}
+    }
 
 	/**
 	 * @return bool

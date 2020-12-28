@@ -14,6 +14,7 @@ if ( have_posts() ):
 		data-id="<?php echo esc_attr( get_the_ID() ); ?>"
 		class="mh-post"
 	>
+
 		<?php
 		while ( have_posts() ) : the_post();
 			get_template_part( 'templates/content-single', 'estate' );

@@ -8,7 +8,8 @@ if ( ! isset( $myhome_single_property_form ) || ! $myhome_single_property_form i
 ?>
 <section>
     <div class="mh-widget-title">
-        <h3 class="mh-widget-title__text"><?php echo esc_html( $myhome_single_property_form->get_label() ); ?></h3>
+        <h3 class="mh-widget-title__text">
+            <?php echo esc_html( 'اطلب العقار الآن' ); ?></h3>
     </div>
 
 	<?php $myhome_single_property_form->display(); ?>

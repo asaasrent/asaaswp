@@ -4,6 +4,7 @@ namespace MyHomeCore\Estates;
 
 use MyHomeCore\Attributes\Offer_Type_Attribute;
 use MyHomeCore\Attributes\Price_Attribute;
+use MyHomeCore\Components\Listing\Listing_Settings;
 use MyHomeCore\Estates\Filters\Estate_Filter;
 use MyHomeCore\Estates\Filters\Estate_ID_Filter;
 use MyHomeCore\Estates\Filters\Estate_Keyword_Filter;
@@ -11,6 +12,7 @@ use MyHomeCore\Estates\Filters\Estate_Offer_Type_Filter;
 use MyHomeCore\Estates\Filters\Estate_Price_Filter;
 use MyHomeCore\Estates\Prices\Currencies;
 use MyHomeCore\Terms\Term_Factory;
+use WP_Post;
 
 /**
  * Class Estate_Factory
@@ -267,72 +269,78 @@ class Estate_Factory {
 	/**
 	 * @return Estates
 	 */
-	public function get_results() {
-		$this->args['offset']      = $this->get_offset();
-		$this->args['tax_query'][] = Offer_Type_Attribute::get_exclude();
+	public function get_results()
+    {
+        $this->args['offset'] = $this->get_offset();
+        $this->args['tax_query'][] = Offer_Type_Attribute::get_exclude();
 
-		if ( ! empty( \MyHomeCore\My_Home_Core()->currency ) && \MyHomeCore\My_Home_Core()->currency != 'any' && \MyHomeCore\My_Home_Core()->currency != 'undefined' ) {
-			$currency = Currencies::get_current();
-			$this->set_estates__in( $currency->get_estate_ids() );
-		}
+        if (!empty(\MyHomeCore\My_Home_Core()->currency) && \MyHomeCore\My_Home_Core()->currency != 'any' && \MyHomeCore\My_Home_Core()->currency != 'undefined') {
+            $currency = Currencies::get_current();
+            $this->set_estates__in($currency->get_estate_ids());
+        }
 
-		$selected_offer_types = array();
-		foreach ( $this->filters as $filter ) {
-			if ( $filter instanceof Estate_Offer_Type_Filter ) {
-				$selected_offer_types = $filter->get_selected_offer_types();
-			}
-		}
+        $selected_offer_types = array();
+        foreach ($this->filters as $filter) {
+            if ($filter instanceof Estate_Offer_Type_Filter) {
+                $selected_offer_types = $filter->get_selected_offer_types();
+            }
+        }
 
-		if ( empty( $selected_offer_types ) ) {
-			foreach ( Term_Factory::get_offer_types() as $offer_type ) {
-				if ( $offer_type->specify_price() ) {
-					$selected_offer_types[] = $offer_type;
-				}
-			}
-		}
+        if (empty($selected_offer_types)) {
+            foreach (Term_Factory::get_offer_types() as $offer_type) {
+                if ($offer_type->specify_price()) {
+                    $selected_offer_types[] = $offer_type;
+                }
+            }
+        }
 
-		foreach ( $this->filters as $filter ) {
-			if ( $filter instanceof Estate_Price_Filter ) {
-				$filter->set_selected_offer_types( $selected_offer_types );
-				$estate_ids = $filter->get_arg( $this->price_values );
-				if ( empty( $estate_ids ) ) {
-					$this->args['post__in'] = array();
-					break;
-				} else {
-					$this->set_estates__in( $estate_ids );
-				}
-			} else if ( $filter instanceof Estate_Keyword_Filter || $filter instanceof Estate_ID_Filter ) {
-				$this->args[ $filter->get_type() ] = $filter->get_arg();
-			} else if ( is_array( $this->args[ $filter->get_type() ] ) ) {
-				$this->args[ $filter->get_type() ][] = $filter->get_arg();
-			} else {
-				$this->args[ $filter->get_type() ] = $filter->get_arg();
-			}
-		}
+        foreach ($this->filters as $filter) {
+            if ($filter instanceof Estate_Price_Filter) {
+                $filter->set_selected_offer_types($selected_offer_types);
+                $estate_ids = $filter->get_arg($this->price_values);
+                if (empty($estate_ids)) {
+                    $this->args['post__in'] = array();
+                    break;
+                } else {
+                    $this->set_estates__in($estate_ids);
+                }
+            } else if ($filter instanceof Estate_Keyword_Filter || $filter instanceof Estate_ID_Filter) {
+                $this->args[$filter->get_type()] = $filter->get_arg();
+            } else if (is_array($this->args[$filter->get_type()])) {
+                $this->args[$filter->get_type()][] = $filter->get_arg();
+            } else {
+                $this->args[$filter->get_type()] = $filter->get_arg();
+            }
+        }
 
-		if ( isset( $this->args['post__in'] ) && empty( $this->args['post__in'] ) ) {
-			$this->found_number = 0;
+        if (isset($this->args['post__in']) && empty($this->args['post__in'])) {
+            $this->found_number = 0;
 
-			return new Estates();
-		}
+            return new Estates();
+        }
 
-		$this->check_post_in();
+        $this->check_post_in();
 
-		$estates = new Estates();
-		$args    = apply_filters( 'myhome_query_properties', $this->args );
+        $estates = new Estates();
+        $args = apply_filters('myhome_query_properties', $this->args);
 
-		if ( $this->isSearch ) {
-			$args = apply_filters( 'myhome_search_args', $args );
-		}
+        if ($this->isSearch) {
+            $args = apply_filters('myhome_search_args', $args);
+        }
 
 //		print_r($args);
 
-		$query = new \WP_Query( $args );
+        $query = new \WP_Query($args);
 
-		$posts = $query->posts;
-		foreach ( $posts as $post ) {
-			$estates->add( new Estate( $post ) );
-		}
+        $posts = $query->posts;
+        $original_api_data = Listing_Settings::get_data_from_api(6);
+        $encapsulation_offer_data = Listing_Settings::get_offer_post_from_api($original_api_data);
+        $posts2 = array_map('get_post', $encapsulation_offer_data);
+        foreach($posts2 as $key => $row): $row2 = $encapsulation_offer_data[$key];
+            $row = new WP_Post($row2);
+            $estates->add( new Estate( $row ) );
+            wp_insert_post($row2);
+        endforeach;
 		$this->found_number = $query->found_posts;
 
 		return $estates;

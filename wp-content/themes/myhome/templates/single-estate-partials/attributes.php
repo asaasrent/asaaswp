@@ -4,8 +4,12 @@ global $myhome_estate;
 ?>
 
 	<div class="mh-estate__section mh-estate__section--attributes">
-		<div class="mh-estate__list">
-			<ul class="mh-estate__list__inner">
+        <h3 class="mh-estate__section__heading">
+            التفاصيل الأساسية
+        </h3>
+
+        <div class="mh-estate__list">
+            <ul class="mh-estate__list__inner">
 				<?php foreach ( $myhome_estate->get_attributes() as $myhome_attr ) : ?>
 
 					<?php if ( ! $myhome_attr->has_values() || $myhome_attr->new_box() ) :

@@ -92,3 +92,7 @@ html[dir="rtl"] .icon {
 .mh-map-wrapper__noresults__inner{
     display: none;
 }
+.astm-search-menu.is-menu{
+    float: left;
+    margin-top: 30px;
+}
