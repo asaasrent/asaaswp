@@ -103,13 +103,15 @@ class Estates_Api {
 		$databody = $params['body'];
 
         $params = json_decode($databody, true);
-     //   print_r($params['data']);
     //    var_dump(empty( $params['data'] ) ? 'true' : 'false' );
         $filters         = empty( $params['data'] ) ? [] : $params['data'];
-//       print_r($filters);
+        $current_page = array_keys($filters)[0];
+        $total = array_keys($filters)[11];
+
         $estates_factory = new Estate_Factory();
-    $mydata=   $estates_factory->get_results($filters);
-    //var_dump($mydata);exit();
+        $mydata=   $estates_factory->get_results($filters);
+//        print_r($filters[$total]);exit();
+
 
 //		foreach ( $filters['data'] as $filter ) {
 //
@@ -132,8 +134,9 @@ class Estates_Api {
 //			\MyHomeCore\My_Home_Core()->currency = $params['currency'];
 //		}
 
-		if ( isset( $params['current_page'] ) ) {
-                $estates_factory->set_page( $params['current_page'] );
+        //$params['current_page']
+		if ( isset( $filters[$test[0]] ) ) {
+                $estates_factory->set_page( $filters[$test[0]] );
 		}
 
 //		if ( isset( $params['sortBy'] ) ) {
@@ -182,7 +185,7 @@ class Estates_Api {
 
 		return array(
 			'results'       => $filters,
-			'found_results' => $estates_factory->get_found_number()
+			'found_results' => $filters[$total]
 		);
 	}
 

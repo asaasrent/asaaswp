@@ -80,6 +80,7 @@ endif; ?>
                                             </div>
 										<?php endforeach; ?>
 									<?php else : ?>
+
                                         <div>
 											<?php echo esc_html( \MyHomeCore\Attributes\Price_Attribute_Options_Page::get_default_value() ); ?>
                                         </div>

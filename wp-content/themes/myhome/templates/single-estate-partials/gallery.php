@@ -108,4 +108,13 @@ if ( $myhome_estate->has_gallery() && ! $myhome_estate->is_gallery_auto_height()
     </div>
 
 <?php
-endif;
+endif;?>
+
+ <div class="mh-estate__main-image">
+        <a class="mh-popup" href="<?php echo $myhome_estate->get_data_api()['image_url']  ?>"
+           title="<?php the_title_attribute(); ?>"
+        >
+            <img src="<?php echo $myhome_estate->get_data_api()['image_url'] ?>"
+                 alt="<?php the_title_attribute(); ?>">
+        </a>
+    </div>

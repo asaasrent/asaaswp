@@ -45,6 +45,7 @@ class Estate {
 	 * @var Prices
 	 */
 	private $prices;
+	public $prices2;
 
 	private $meta;
 
@@ -56,7 +57,10 @@ class Estate {
 	public function __construct( \WP_Post $post ) {
 		$this->post   = $post;
 		$this->meta   = get_post_meta( $post->ID );
-		$this->prices = new Prices( $this );
+        $this->prices = new Prices( $this );
+        $this->prices2 = $post->post_parent;
+
+       // print_r($this->prices2);exit();
 
 		if ( isset( $this->meta['estate_gallery'] ) && ! empty( $this->meta['estate_gallery'] ) ) {
 			$this->meta['gallery'] = unserialize( $this->meta['estate_gallery'][0] );
@@ -122,7 +126,6 @@ class Estate {
 				$this->attributes[] = new Estate_Attribute( $attribute, $this );
 			}
 		}
-
 		return apply_filters( 'myhome_estate_attributes', $this->attributes );
 	}
 
@@ -175,6 +178,17 @@ class Estate {
 		return apply_filters( 'myhome_property_name', $this->post->post_title, $this );
 	}
 
+    public function get_data_api() {
+        $attributes =  array(
+            'price'  => $this->post->post_content_filtered,
+            'city_name'  => $this->post->post_password,
+            'neighborhood_name'  => $this->post->post_excerpt,
+            'offer_type_ar'  => $this->post->pinged,
+            'image_url'  => $this->post->post_mime_type
+        );
+        return $attributes;
+	}
+
 	/**
 	 * @return string
 	 */
@@ -218,7 +232,8 @@ class Estate {
 			return false;
 		}
 
-		return $this->prices->has_price();
+//		return $this->prices->has_price();
+		return true;
 	}
 
 	/**
@@ -534,6 +549,10 @@ class Estate {
 		}
 
 		return $prices[0];
+	}
+    public function get_price2() {
+		$price4 = $this->prices2;
+		return $price4;
 	}
 
 	/**

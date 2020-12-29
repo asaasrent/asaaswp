@@ -36,7 +36,7 @@ class Estate_Writer {
 	 * @var User
 	 */
 	public $agent;
-
+    private $price;
 	/**
 	 * @var Sidebar_Elements
 	 */
@@ -59,6 +59,9 @@ class Estate_Writer {
 	 */
 	public function get_ID() {
 		return $this->estate->get_ID();
+	}
+	public function get_price() {
+		return $this->estate->get_price2();
 	}
 
 	/**
@@ -324,6 +327,10 @@ class Estate_Writer {
 	 */
 	public function get_attributes() {
 		return $this->estate->get_attributes();
+	}
+
+	public function get_data_api() {
+		return $this->estate->get_data_api();
 	}
 
 	/**

@@ -228,6 +228,30 @@ class Listing_Settings {
         }
         return  $data_array;
     }
+    public static function get_pagination($offerArray){
+
+        $args = array(
+            'base'               => $offerArray['data'], // http://example.com/all_posts.php%_% : %_% is replaced by format (below).
+            'format'             => '%#%', // ?page=%#% : %#% is replaced by the page number.
+            'total'              => $offerArray['total'],
+            'current'            => $offerArray['current_page'],
+            'aria_current'       => 'page',
+            'show_all'           => false,
+            'prev_next'          => true,
+            'prev_text'          => __( '&laquo; Previous' ),
+            'next_text'          => __( 'Next &raquo;' ),
+            'end_size'           => 1,
+            'mid_size'           => 2,
+            'type'               => 'plain',
+            'add_args'           => array(), // Array of query args to add.
+            'add_fragment'       => '',
+            'before_page_number' => '',
+            'after_page_number'  => '',
+        );
+        paginate_links($args);
+
+        return  paginate_links($args);
+    }
     public static function get_offer_post_from_api($post){
         $data_array = [];
         foreach ($post as $row) {
@@ -241,19 +265,19 @@ class Listing_Settings {
                 'post_content' => $row['description'],
                 'menu_order' => 0,
                 'guid' => get_site_url($row['id'],'/'.$row['title'],null),
-                'post_excerpt' => '',
-                'post_mime_type' => '',
                 'comment_count' => 0,
                 'filter' => 'row',
                 'post_type' => 'estate',
-                'post_parent' => 0,
-                'post_content_filtered' => '',
-                'pinged' => '',
+                'post_parent' => $row['price'],
                 'post_status' => $row['status'],
                 'comment_status' => 'closed',
                 'ping_status' => 'closed',
                 'payment_status' => $row['status'],
-                'post_password' => '',
+                'post_content_filtered' => $row['price'],
+                'pinged' =>  $row['offer_type_ar'],
+                'post_password' => $row['city_name'],
+                'post_excerpt' =>  $row['neighborhood_name'],
+                'post_mime_type' => $row['image_url'],
                 'to_ping' => '',
                 'post_date' => $row['created_at'],
                 'post_modified' => $row['updated_at'],
