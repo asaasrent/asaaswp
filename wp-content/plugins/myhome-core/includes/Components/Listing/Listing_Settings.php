@@ -276,16 +276,44 @@ class Listing_Settings {
                 'post_content_filtered' => $row['price'],
                 'pinged' =>  $row['offer_type_ar'],
                 'post_password' => $row['city_name'],
-                'post_excerpt' =>  $row['neighborhood_name'],
+                'to_ping' =>  $row['neighborhood_name'],
                 'post_mime_type' => $row['image_url'],
-                'to_ping' => '',
                 'post_date' => $row['created_at'],
                 'post_modified' => $row['updated_at'],
                 'post_modified_gmt' => $row['updated_at'],
                 'post_date_gmt' => $row['created_at'],
-                ];
+                'post_excerpt' => $row['type'],
+            ];
         }
         return  $data_array;
+    }
+    public  static function offer_type($type){
+        $url = 'https://marketing-api.asaas.sa/api/get_offers_types';
+        $arguments = array(
+            'headers' => array(
+                'office-number' => '9665704',
+            ),
+        );
+        $response = wp_remote_get($url, $arguments);
+        $offerArray = [];
+        if(is_wp_error($response)){
+            echo 'Error !!! ';
+        }
+        else{
+            $body = wp_remote_retrieve_body( $response );
+            $data = json_decode(json_encode($body), true);
+            $bodyData= json_decode($data, true);
+            if(!empty($data)) {
+                $offerArray = $bodyData['types'];
+            }
+        }
+        $returned_type = '';
+        foreach ($offerArray as   $index => $key ){
+            if ($index === $type){
+                $returned_type = $key;
+            }
+        }
+        return  $returned_type;
     }
 
     /**

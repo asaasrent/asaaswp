@@ -12,6 +12,12 @@ global $myhome_estate;
             <ul class="mh-estate__list__inner">
                     <li class="mh-estate__list__element">
                         <strong>
+                            نوع العقار:
+						</strong>
+                        <?php echo esc_html( $myhome_estate->get_data_api()['property_type'] ); ?>
+                    </li>
+                    <li class="mh-estate__list__element">
+                        <strong>
                             نوع العرض:
 						</strong>
                         <?php echo esc_html( $myhome_estate->get_data_api()['offer_type_ar'] ); ?>

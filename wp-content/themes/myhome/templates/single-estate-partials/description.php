@@ -9,10 +9,10 @@ if ( ! empty( get_the_content() ) ) :?>
             <h3 class="mh-estate__section__heading">
                 التفاصيل الاضافية
             </h3>
-
+            <div class="mh-estate__section">
+                <?php echo esc_html($myhome_estate_element->get_slug() ); ?>
+            </div>
         <?php endif; ?>
-
-		<?php the_content(); ?>
 
     </div>
 <?php

@@ -113,7 +113,7 @@ global $myhome_estate_list;
                             <div class="mh-estate-vertical__primary">
 
                                 <?php if ( $myhome_estate->has_price() ) : ?>
-                                    <?php echo esc_html( $myhome_estate->get_price2() ); echo ' ر.س '?>
+                                    <?php echo esc_html( $myhome_estate->get_price2() .  ' ر.س '); ?>
                                 <?php else : ?>
                                     <div class="mh-price__contact">
                                         <?php if($myhome_estate->get_contact_for_price_text() != 'Contact for price')

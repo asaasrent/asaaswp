@@ -150,6 +150,9 @@ class Estate_Writer {
 	public function get_gallery() {
 		return $this->estate->get_gallery();
 	}
+    public function get_description() {
+		return $this->estate->get_description();
+	}
 
 	/**
 	 * @return mixed|string
@@ -166,7 +169,11 @@ class Estate_Writer {
 	 * @return bool
 	 */
 	public function has_price() {
-		return $this->estate->has_price();
+	    if(self::get_price() !== ''){
+	        return true;
+        }
+	    else
+	        return false;
 	}
 
 	/**
@@ -202,6 +209,9 @@ class Estate_Writer {
 	 */
 	public function get_slider_name() {
 		return \MyHomeCore\My_Home_Core()->settings->get( 'estate_slider' );
+	}
+	public function get_slug() {
+		return $this->estate->get_slug();
 	}
 
 	/**

@@ -15,6 +15,7 @@ use MyHomeCore\Attributes\Text_Area_Attribute;
 use MyHomeCore\Attributes\Text_Attribute;
 use MyHomeCore\Common\Attachment;
 use MyHomeCore\Common\Plan;
+use MyHomeCore\Components\Listing\Listing_Settings;
 use MyHomeCore\Estates\Prices\Currencies;
 use MyHomeCore\Estates\Prices\Currency_Prices;
 use MyHomeCore\Estates\Prices\Price;
@@ -182,10 +183,13 @@ class Estate {
         $attributes =  array(
             'price'  => $this->post->post_content_filtered,
             'city_name'  => $this->post->post_password,
-            'neighborhood_name'  => $this->post->post_excerpt,
+            'neighborhood_name'  => $this->post->to_ping,
             'offer_type_ar'  => $this->post->pinged,
-            'image_url'  => $this->post->post_mime_type
+            'image_url'  => $this->post->post_mime_type,
+            'property_type'  => $this->post->post_excerpt
         );
+        $property_type2 = Listing_Settings::offer_type($attributes['property_type']);
+        $attributes['property_type'] = $property_type2;
         return $attributes;
 	}
 
@@ -200,7 +204,7 @@ class Estate {
 	 * @return string
 	 */
 	public function get_slug() {
-		return $this->post->post_name;
+		return $this->post->post_content;
 	}
 
 	/**

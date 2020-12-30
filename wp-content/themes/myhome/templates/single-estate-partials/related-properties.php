@@ -125,7 +125,7 @@ if ( count( $myhome_related_properties ) ) :
 									<?php foreach ( $myhome_related_estate->get_prices() as $myhome_related_estate_price ) : ?>
                                         <div
 											<?php if ( $myhome_related_estate_price->is_range() ) : ?>class="mh-price__range" <?php endif; ?>>
-											<?php echo esc_html( $myhome_related_estate_price->get_formatted() ); ?>
+											<?php echo esc_html( $myhome_related_estate_price->get_formatted() . ' ر.س ' ); ?>
                                         </div>
 									<?php endforeach;; ?>
                                 </div>

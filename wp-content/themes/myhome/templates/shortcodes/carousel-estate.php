@@ -116,7 +116,7 @@ global $myhome_estate_carousel;
 								<?php foreach ( $myhome_estate->get_prices() as $myhome_price ) : ?>
                                     <div
 										<?php if ( $myhome_price->is_range() ) : ?>class="mh-price__range" <?php endif; ?>>
-										<?php echo esc_html( $myhome_price->get_formatted() ); ?>
+										<?php echo esc_html( $myhome_price->get_formatted()  . ' ر.س ' ); ?>
                                     </div>
 								<?php endforeach;; ?>
 							<?php else : ?>

@@ -13,11 +13,9 @@ global $myhome_estate;
                     <div class="mh-estate__details__price">
                         <div>
 							<?php if ( $myhome_estate->has_price() ) : ?>
-								<?php foreach ( $myhome_estate->get_prices() as $myhome_price ) : ?>
-                                    <div class="mh-estate__details__price__single">
-                                        <?php echo esc_html( 'تواصل للسعر' ); ?>
-                                    </div>
-								<?php endforeach; ?>
+                                <div class="mh-estate__details__price__single">
+                                    <?php echo esc_html('السعر: '. $myhome_estate->get_price() . ' ر.س ' ); ?>
+                                </div>
 							<?php else : ?>
                                 <div class="mh-estate__details__price__single">
 									<?php echo esc_html('تواصل للسعر' ); ?>

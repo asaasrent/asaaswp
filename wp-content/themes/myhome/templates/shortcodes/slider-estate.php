@@ -98,7 +98,7 @@ global $myhome_estates;
 
 													<?php foreach ( $myhome_prices as $myhome_price ) : ?>
 														<div <?php if ( $myhome_price->is_range() ) : ?>class="mh-price__range" <?php endif; ?>>
-															<?php echo esc_html( $myhome_price->get_formatted() ); ?>
+															<?php echo esc_html( $myhome_price->get_formatted() . ' ر.س ' ); ?>
 														</div>
 													<?php endforeach; ?>
 
@@ -185,7 +185,7 @@ global $myhome_estates;
 											<div class="mh-slider__card-short__price">
 												<?php $myhome_price = $myhome_estate->get_price(); ?>
 												<div <?php if ( $myhome_price->is_range() ) : ?>class="mh-price__range" <?php endif; ?>>
-													<?php echo esc_html( $myhome_price->get_formatted() ); ?>
+													<?php echo esc_html( $myhome_price->get_formatted() . ' ر.س ' ); ?>
 												</div>
 											</div>
 										<?php endif; ?>
@@ -269,7 +269,7 @@ global $myhome_estates;
 											<div class="mh-slider__transparent__price">
 												<?php $myhome_price = $myhome_estate->get_price(); ?>
 												<div <?php if ( $myhome_price->is_range() ) : ?>class="mh-price__range" <?php endif; ?>>
-													<?php echo esc_html( $myhome_price->get_formatted() ); ?>
+													<?php echo esc_html( $myhome_price->get_formatted() . ' ر.س ' ); ?>
 												</div>
 											</div>
 										<?php endif; ?>

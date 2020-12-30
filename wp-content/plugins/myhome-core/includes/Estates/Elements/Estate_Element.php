@@ -127,7 +127,7 @@ abstract class Estate_Element {
 	 * @return string
 	 */
 	public function get_slug() {
-		return isset( $this->element['slug'] ) ? $this->element['slug'] : '';
+		return $this->estate->get_slug();
 	}
 
 	/**

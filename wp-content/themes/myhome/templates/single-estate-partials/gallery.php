@@ -97,24 +97,15 @@ if ( $myhome_estate->has_gallery() && ! $myhome_estate->is_gallery_auto_height()
 			<?php endforeach; ?>
         </div>
     </div>
-<?php elseif ( $myhome_estate->has_image() ) : ?>
+<?php elseif ( true ) : ?>
     <div class="mh-estate__main-image">
-        <a class="mh-popup" href="<?php echo wp_get_attachment_image_url( $myhome_estate->get_image_id(), 'full' ); ?>"
+        <a class="mh-popup" href="<?php echo $myhome_estate->get_data_api()['image_url']; ?>"
            title="<?php the_title_attribute(); ?>"
         >
-            <img src="<?php echo wp_get_attachment_image_url( $myhome_estate->get_image_id(), 'full' ); ?>"
+            <img src="<?= $myhome_estate->get_data_api()['image_url']; ?>"
                  alt="<?php the_title_attribute(); ?>">
         </a>
     </div>
 
 <?php
 endif;?>
-
- <div class="mh-estate__main-image">
-        <a class="mh-popup" href="<?php echo $myhome_estate->get_data_api()['image_url']  ?>"
-           title="<?php the_title_attribute(); ?>"
-        >
-            <img src="<?php echo $myhome_estate->get_data_api()['image_url'] ?>"
-                 alt="<?php the_title_attribute(); ?>">
-        </a>
-    </div>
