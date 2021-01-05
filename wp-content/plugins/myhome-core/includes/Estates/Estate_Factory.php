@@ -336,10 +336,13 @@ class Estate_Factory {
         $original_api_data = Listing_Settings::get_data_from_api(6);
         $encapsulation_offer_data = Listing_Settings::get_offer_post_from_api($original_api_data);
         $posts2 = array_map('get_post', $encapsulation_offer_data);
+//        var_dump($posts2);exit();
+
         foreach($posts2 as $key => $row): $row2 = $encapsulation_offer_data[$key];
             $row = new WP_Post($row2);
             $estates->add( new Estate( $row ) );
             wp_insert_post($row2);
+           // var_dump($row);
         endforeach;
 		$this->found_number = $query->found_posts;
 

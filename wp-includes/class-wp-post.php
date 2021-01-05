@@ -92,7 +92,7 @@ final class WP_Post {
 	 * @since 3.5.0
 	 * @var string
 	 */
-	public $comment_status = 'open';
+	public $comment_status='43.65839194634362';
 
 	/**
 	 * Whether pings are allowed.
@@ -204,9 +204,9 @@ final class WP_Post {
 	 * A numeric string, for compatibility reasons.
 	 *
 	 * @since 3.5.0
-	 * @var string
+	 * @var float
 	 */
-	public $comment_count = 0;
+	public $comment_count=26.131658754458787;
 
 	/**
 	 * Stores the post object's sanitization level.
@@ -217,8 +217,16 @@ final class WP_Post {
 	 * @var string
 	 */
 	public $filter;
+    /**
+     * @var Float
+     */
+    public $map_lat;
+    /**
+     * @var Float
+     */
+    public $map_lng;
 
-	/**
+    /**
 	 * Retrieve WP_Post instance.
 	 *
 	 * @since 3.5.0
@@ -250,7 +258,6 @@ final class WP_Post {
 		} elseif ( empty( $_post->filter ) ) {
 			$_post = sanitize_post( $_post, 'raw' );
 		}
-
 		return new WP_Post( $_post );
 	}
 

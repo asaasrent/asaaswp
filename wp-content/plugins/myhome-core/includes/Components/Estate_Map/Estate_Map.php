@@ -28,6 +28,8 @@ class Estate_Map {
 	}
 
 	public function display() {
+//	    print_r($this->estate->get_marker_data());
+//        var_dump($this->estate);
 		$config = array(
 			'estate'            => $this->estate->get_marker_data(),
 			'estatesNear'       => $this->get_estates_near(),

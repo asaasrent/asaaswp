@@ -342,7 +342,6 @@ class Estate_Writer {
 	public function get_data_api() {
 		return $this->estate->get_data_api();
 	}
-
 	/**
 	 * @return int
 	 */

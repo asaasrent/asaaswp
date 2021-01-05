@@ -31,7 +31,7 @@ class Estates implements \Iterator, \Countable {
 	 */
 	public function add( Estate $estate ) {
 		$this->estates[] = $estate;
-	}
+    }
 
 	/**
 	 * @param string $data_type

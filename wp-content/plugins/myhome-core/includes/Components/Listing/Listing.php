@@ -55,6 +55,7 @@ class Listing {
 			<?php endif; ?>
 		</listing-grid>
 
+<!---->
 <!--        --><?php
 //        if ( paginate_links() ) : ?>
 <!--        <div class="mh-pagination">-->

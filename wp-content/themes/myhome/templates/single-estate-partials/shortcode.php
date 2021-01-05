@@ -8,7 +8,7 @@ global $myhome_estate_element;
 	<?php if ( $myhome_estate_element->has_label() ) : ?>
 		<h3 class="mh-estate__section__heading"><?php echo esc_html( $myhome_estate_element->get_label() ); ?></h3>
 	<?php endif; ?>
-
+    Submit property
 	<?php if ( $myhome_estate_element->has_shortcode() ) : ?>
 		<?php echo do_shortcode( $myhome_estate_element->get_shortcode() ); ?>
 	<?php endif; ?>

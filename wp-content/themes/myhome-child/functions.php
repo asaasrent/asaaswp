@@ -30,5 +30,23 @@ add_action( 'wp_enqueue_scripts', 'myhome_child_enqueue_styles' );
 function myhome_lang_setup() {
 	load_child_theme_textdomain( 'myhome', get_stylesheet_directory() . '/languages' );
 }
-
 add_action( 'after_setup_theme', 'myhome_lang_setup' );
+
+//var_dump($result['response'] .' asmaaaaaaaaaaaaaaaaaaaa');
+
+add_action('gform_after_submission', 'post_to_third_party', 10, 2);
+function post_to_third_party($entry, $form) {
+
+    $post_url = 'another-page-on-the-site';
+    $body = array(
+        'first_name' => $entry['1.3'],
+        'last_name' => $entry['1.6'],
+        'chargetotal' => $entry['5'],
+        'test' => 'test',
+    );
+    if( !class_exists( 'WP_Http' ) )
+        include_once( ABSPATH . WPINC. '/class-http.php' );
+
+    $request = new WP_Http();
+    $result = $request->post($post_url, array('body' => $body));
+}

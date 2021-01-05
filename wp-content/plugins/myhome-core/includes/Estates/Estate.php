@@ -36,6 +36,7 @@ class Estate {
 	 * @var \WP_Post
 	 */
 	private $post;
+	private $post1;
 
 	/**
 	 * @var Estate_Attribute[]
@@ -49,6 +50,9 @@ class Estate {
 	public $prices2;
 
 	private $meta;
+	public $map_lat;
+    public $map_lng;
+    public $img_url;
 
 	/**
 	 * Estate constructor.
@@ -57,12 +61,18 @@ class Estate {
 	 */
 	public function __construct( \WP_Post $post ) {
 		$this->post   = $post;
+
+
 		$this->meta   = get_post_meta( $post->ID );
         $this->prices = new Prices( $this );
         $this->prices2 = $post->post_parent;
 
-       // print_r($this->prices2);exit();
 
+        $this->map_lat   = $this->post->map_lat;
+        $this->map_lng   = $this->post->map_lng;
+//        $this->img_url   = $this->post->post_mime_type;
+        self::get_position();
+//        print_r($this->map_lng . ' ssssssssss11111 ');
 		if ( isset( $this->meta['estate_gallery'] ) && ! empty( $this->meta['estate_gallery'] ) ) {
 			$this->meta['gallery'] = unserialize( $this->meta['estate_gallery'][0] );
 		} else {
@@ -75,7 +85,7 @@ class Estate {
 	 */
 	public function get_post() {
 		return $this->post;
-	}
+    }
 
 	/**
 	 * @param  int  $post_id
@@ -178,18 +188,24 @@ class Estate {
 	public function get_name() {
 		return apply_filters( 'myhome_property_name', $this->post->post_title, $this );
 	}
-
     public function get_data_api() {
         $attributes =  array(
             'price'  => $this->post->post_content_filtered,
             'city_name'  => $this->post->post_password,
             'neighborhood_name'  => $this->post->to_ping,
             'offer_type_ar'  => $this->post->pinged,
-            'image_url'  => $this->post->post_mime_type,
-            'property_type'  => $this->post->post_excerpt
+            'image_url'  => $this->post->guid,
+            'property_type'  => $this->post->post_excerpt,
+            'board'  => $this->post->menu_order,
+            'lat'  => $this->post->post_author,
+            'lng'  => $this->post->comment_status
         );
+
+
         $property_type2 = Listing_Settings::offer_type($attributes['property_type']);
         $attributes['property_type'] = $property_type2;
+
+
         return $attributes;
 	}
 
@@ -205,6 +221,9 @@ class Estate {
 	 */
 	public function get_slug() {
 		return $this->post->post_content;
+	}
+	public function get_map_lng() {
+		return $this->map_lng;
 	}
 
 	/**
@@ -396,17 +415,18 @@ class Estate {
 	 * @return array
 	 */
 	public function get_position() {
-		$location = $this->get_location();
+//		$location = $this->get_location();
+//
+//		if ( empty( $location ) ) {
+//			return array( 'lat' => 26.144973198569605, 'lng' => 43.66137385589906 );
+//		}
 
-		if ( empty( $location ) ) {
-			return array( 'lat' => 0, 'lng' => 0 );
-		}
-
-		return array(
-			'lat' => doubleval( $location['lat'] ),
-			'lng' => doubleval( $location['lng'] ),
+        return array(
+			'lat' => 26.131658754458787,
+			'lng' => 43.65839194634362,
 		);
-	}
+
+    }
 
 	/**
 	 * @param  bool  $maps
@@ -435,7 +455,6 @@ class Estate {
 	 */
 	public function get_google_maps_link() {
 		$position = $this->get_position();
-
 		return 'https://www.google.com/maps/?q=' . $position['lat'] . ',' . $position['lng'];
 	}
 
@@ -748,7 +767,12 @@ class Estate {
 	 * @return false|string
 	 */
 	public function get_marker_image() {
-		return wp_get_attachment_image_url( $this->get_image_id(), 'myhome-standard-s' );
+        $image_url = self::get_data_api()['image_url'];
+        $image_type_check = @exif_imagetype($image_url);//Get image type + check if exists
+        if (strpos($http_response_header[0], "403") || strpos($http_response_header[0], "404") || strpos($http_response_header[0], "302") || strpos($http_response_header[0], "301")) {
+            $image_url = 'https://dummyimage.com/600x250/7dc9ff/ffffff&text=Sorry+No+image+Available';
+        }
+        return $image_url;
 	}
 
 	/**

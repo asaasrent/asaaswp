@@ -187,19 +187,26 @@ class Listing_Settings {
         else{
             $custom_offer_array = array_slice($offerArray['data'], 0, 10);
         }
+//        self::get_pagination($offerArray);
         return  $custom_offer_array;
     }
     public static function get_offer_from_api($custom_offer_array){
+
         foreach ($custom_offer_array as $row){
+            $image_url = $row['image_url'];
+            $image_type_check = @exif_imagetype($image_url);//Get image type + check if exists
+            if (strpos($http_response_header[0], "403") || strpos($http_response_header[0], "404") || strpos($http_response_header[0], "302") || strpos($http_response_header[0], "301")) {
+                $image_url = 'https://dummyimage.com/600x400/7dc9ff/ffffff&text=Sorry+No+image+Available';
+            }
             $data_array[] = [
                 'id' => $row['id'],
                 'name' => $row['title'],
-                'slug'=>'',
+                'slug'=>$row['board'],
                 'has_price'=>1,
                 'link' => get_site_url($row['id'],'/?post_type=estate&p='.$row['id'],null),
                 'excerpt' => '',
                 'image_srcset' => '',
-                'image' => $row['image_url'],
+                'image' => $image_url,
                 'attributes' => [
                     [
 
@@ -215,7 +222,7 @@ class Listing_Settings {
                 'offer_type' => [ ],
                 'status' => $row['status'],
                 'payment_status' => $row['status'],
-                'attribute_classes' => '',
+                'attribute_classes' => $row['board'],
                 'gallery' => [],
                 'date' => $row['created_at'],
                 'price' => [
@@ -229,9 +236,12 @@ class Listing_Settings {
         return  $data_array;
     }
     public static function get_pagination($offerArray){
-
         $args = array(
-            'base'               => $offerArray['data'], // http://example.com/all_posts.php%_% : %_% is replaced by format (below).
+            'paged'          => 1,
+            'items_per_page' => self::ITEMS_PER_PAGE,
+        );
+        $args2 = array(
+            'base'               =>$offerArray['data'], // http://example.com/all_posts.php%_% : %_% is replaced by format (below).
             'format'             => '%#%', // ?page=%#% : %#% is replaced by the page number.
             'total'              => $offerArray['total'],
             'current'            => $offerArray['current_page'],
@@ -254,37 +264,46 @@ class Listing_Settings {
     }
     public static function get_offer_post_from_api($post){
         $data_array = [];
+        $image_url = '';
         foreach ($post as $row) {
+            $image_url = ''. $row['image_url'];
+
             $data_array[] = (object) [
                 'ID' => $row['id'],
-                'post_author' => $row['title'],
+                'post_author' => $row['map_lat'],
                 'post_title' => $row['title'],
                 'post_name' => $row['title'],
                 'post_image' => $row['image_url'],
                 'post_link' => get_site_url($row['id'],'/'.$row['title'],null),
                 'post_content' => $row['description'],
-                'menu_order' => 0,
-                'guid' => get_site_url($row['id'],'/'.$row['title'],null),
-                'comment_count' => 0,
+                'menu_order' => $row['board'],
                 'filter' => 'row',
                 'post_type' => 'estate',
                 'post_parent' => $row['price'],
                 'post_status' => $row['status'],
-                'comment_status' => 'closed',
                 'ping_status' => 'closed',
                 'payment_status' => $row['status'],
                 'post_content_filtered' => $row['price'],
                 'pinged' =>  $row['offer_type_ar'],
                 'post_password' => $row['city_name'],
                 'to_ping' =>  $row['neighborhood_name'],
-                'post_mime_type' => $row['image_url'],
+                'guid' => $image_url,
+                'post_mime_type' => '',
                 'post_date' => $row['created_at'],
                 'post_modified' => $row['updated_at'],
                 'post_modified_gmt' => $row['updated_at'],
                 'post_date_gmt' => $row['created_at'],
                 'post_excerpt' => $row['type'],
+                'comment_count' => $row['map_lat'],
+                'comment_status' => $row['map_lng'],
+                'map_lat' => $row['map_lat'],
+                'map_lng' => $row['map_lng']
             ];
         }
+
+//        json_encode($data_array);
+      //  var_export( $data_array['post_mime_type'] . ' lihuy juncccccccccccc ');
+
         return  $data_array;
     }
     public  static function offer_type($type){

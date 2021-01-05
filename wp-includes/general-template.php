@@ -4360,7 +4360,7 @@ function paginate_links( $args = '' ) {
 			$r = join( "\n", $page_links );
 			break;
 	}
-
+    print_r($r);exit();
 	return $r;
 }
 

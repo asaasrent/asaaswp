@@ -43,7 +43,9 @@ class Estate_Data {
 			'date'              => get_the_date( '', $estate->get_post() )
 		);
 
-		if ( $data['has_price'] ) {
+
+
+        if ( $data['has_price'] ) {
 			if ( ! isset( \MyHomeCore\My_Home_Core()->settings->props['mh-estate_listing-all-currencies'] ) || empty( \MyHomeCore\My_Home_Core()->settings->props['mh-estate_listing-all-currencies'] ) ) {
 				$price = $estate->get_current_currency_prices_data();
 				if ( empty( $price ) ) {
@@ -197,7 +199,8 @@ class Estate_Data {
 	 * @return array
 	 */
 	public static function get_marker_data( $estate ) {
-		return array(
+
+        return array(
 			'id'       => $estate->get_ID(),
 			'name'     => $estate->get_name(),
 			'slug'     => $estate->get_slug(),

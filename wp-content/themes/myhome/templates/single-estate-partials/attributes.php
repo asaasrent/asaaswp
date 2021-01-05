@@ -12,31 +12,37 @@ global $myhome_estate;
             <ul class="mh-estate__list__inner">
                     <li class="mh-estate__list__element">
                         <strong>
-                            نوع العقار:
+                            نوع العقار :
 						</strong>
                         <?php echo esc_html( $myhome_estate->get_data_api()['property_type'] ); ?>
                     </li>
                     <li class="mh-estate__list__element">
                         <strong>
-                            نوع العرض:
+                            نوع العرض :
 						</strong>
                         <?php echo esc_html( $myhome_estate->get_data_api()['offer_type_ar'] ); ?>
                     </li>
                     <li class="mh-estate__list__element">
                         <strong>
-                           السعر:
+                           السعر :
 						</strong>
                         <?php echo esc_html( $myhome_estate->get_data_api()['price'] ); echo 'ر.س'?>
                     </li>
                     <li class="mh-estate__list__element">
                         <strong>
-                            المدينة:
+                            المدينة :
                         </strong>
                         <?php echo esc_html( $myhome_estate->get_data_api()['city_name'] ); ?>
                     </li>
                     <li class="mh-estate__list__element">
                         <strong>
-                            الحي:
+                            رقم اللوحة :
+                        </strong>
+                        <?php if($myhome_estate->get_data_api()['board']!= '') echo esc_html( $myhome_estate->get_data_api()['board'] ); ?>
+                    </li>
+                    <li class="mh-estate__list__element">
+                        <strong>
+                            الحي :
                         </strong>
                         <?php echo esc_html( $myhome_estate->get_data_api()['neighborhood_name'] ); ?>
                     </li>

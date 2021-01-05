@@ -236,17 +236,10 @@ endif;
 
 
 <!---->
-<?php if ( $myhome_estate->has_map( true ) ) :
-    ?>
 
-    <h3 class="text-center">
-        موقع العقار على الخريطة
-    </h3>
+<h3 class="text-center">
+    موقع العقار على الخريطة
+</h3>
 <?php
-    else:?>
-        <h3 class="text-center">
-            لا يوجد موقع محدد على الخريطة
-        </h3>
-<?php  endif;
     $myhome_estate->map();
 ?>
