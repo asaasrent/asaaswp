@@ -112,3 +112,5 @@ function get_requests_types(){
 add_shortcode( 'requests_types', 'get_requests_types' );
 
 //add_action( 'plugins_loaded', array( $awsm_jobs_rest_api, 'run' ) );
+
+

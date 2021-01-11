@@ -333,6 +333,14 @@ class Estate {
 	 */
 	public function get_gallery() {
 		$gallery = get_field( 'myhome_estate_gallery', $this->post->ID );
+		$array = Listing_Settings::get_data_from_api();
+		$array2 = Listing_Settings::get_offer_from_api($array);
+		foreach($array2 as $key=>$value):
+            if($value["id"] ==  $this->post->ID ){
+                $gallery = $value["gallery"];
+            }
+        endforeach;
+
 		if ( ! is_array( $gallery ) ) {
 			return array();
 		}

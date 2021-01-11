@@ -1328,12 +1328,12 @@ class GFP_Third_Party_Post_Addon extends GFFeedAddOn {
 	 * @param $form
 	 */
 	public function gform_after_submission( $entry, $form ) {
-
 		$this->get_pdfs( $entry, $form );
 
 		$this->send_request();
 
 		$this->remove_temp_files();
+
 
 	}
 

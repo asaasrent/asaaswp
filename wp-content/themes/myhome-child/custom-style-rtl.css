@@ -96,3 +96,6 @@ html[dir="rtl"] .icon {
     float: left;
     margin-top: 30px;
 }
+.single-estate .mh-layout__content-left {
+    overflow-y: hidden;
+}

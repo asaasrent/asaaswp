@@ -198,6 +198,14 @@ class Listing_Settings {
             if (strpos($http_response_header[0], "403") || strpos($http_response_header[0], "404") || strpos($http_response_header[0], "302") || strpos($http_response_header[0], "301")) {
                 $image_url = 'https://dummyimage.com/600x400/7dc9ff/ffffff&text=Sorry+No+image+Available';
             }
+            $gallery = [];$gallery_item=[];
+            foreach ($row['images'] as $key => $value):
+                $gallery_item = [
+                    'image' => $value['image_url'],
+                    'alt' => 'صورة من الألبوم'
+                ];
+                array_push($gallery, $gallery_item);
+            endforeach;
             $data_array[] = [
                 'id' => $row['id'],
                 'name' => $row['title'],
@@ -223,7 +231,7 @@ class Listing_Settings {
                 'status' => $row['status'],
                 'payment_status' => $row['status'],
                 'attribute_classes' => $row['board'],
-                'gallery' => [],
+                'gallery' => $gallery,
                 'date' => $row['created_at'],
                 'price' => [
                     [
