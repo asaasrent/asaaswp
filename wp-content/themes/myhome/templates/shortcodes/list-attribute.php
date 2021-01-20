@@ -1,6 +1,8 @@
 <?php
 global $myhome_list_attribute;
 /* @var \MyHomeCore\Terms\Term[] $myhome_mosaic */
+//throw new Exception('message');
+
 ?>
 
 <div class="mh-list-attribute">

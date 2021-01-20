@@ -191,6 +191,7 @@ class Estate {
     public function get_data_api() {
         $attributes =  array(
             'price'  => $this->post->post_content_filtered,
+            'id'  => $this->post->ID,
             'city_name'  => $this->post->post_password,
             'neighborhood_name'  => $this->post->to_ping,
             'offer_type_ar'  => $this->post->pinged,
@@ -777,8 +778,8 @@ class Estate {
 	public function get_marker_image() {
         $image_url = self::get_data_api()['image_url'];
         $image_type_check = @exif_imagetype($image_url);//Get image type + check if exists
-        if (strpos($http_response_header[0], "403") || strpos($http_response_header[0], "404") || strpos($http_response_header[0], "302") || strpos($http_response_header[0], "301")) {
-            $image_url = 'https://dummyimage.com/600x250/7dc9ff/ffffff&text=Sorry+No+image+Available';
+        if (!$image_type_check) {
+            $image_url =  wp_get_attachment_url(get_option('default_image_for_bronken_link'));
         }
         return $image_url;
 	}

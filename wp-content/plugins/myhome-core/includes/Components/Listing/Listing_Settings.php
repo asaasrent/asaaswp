@@ -164,6 +164,7 @@ class Listing_Settings {
         $arguments = array(
             'headers' => array(
                 'office-number' => '9665704',
+                'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImJiMDQzYTFjNWEyNDZlZmNlMjc2YmY5MTEwNzIyZTIwMjY3OWM2NjA0ZDFmZTYwYWVjZGZmNmZlMzc3ZDZmNjA5MzY3YjY2MjIyZjcyZGZkIn0.eyJhdWQiOiI1IiwianRpIjoiYmIwNDNhMWM1YTI0NmVmY2UyNzZiZjkxMTA3MjJlMjAyNjc5YzY2MDRkMWZlNjBhZWNkZmY2ZmUzNzdkNmY2MDkzNjdiNjYyMjJmNzJkZmQiLCJpYXQiOjE2MTEwNjg4OTIsIm5iZiI6MTYxMTA2ODg5MiwiZXhwIjoxNjQyNjA0ODkyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.jCmFFvWFOigZAbbUUNTLe9Yzqvz_7Vb9DsshysYrJSnoWRIBpzgqUtJ73AU4BaBirHnK87xOGS6Ux9V24ue0WUoj4KtfyJ4TZ5eXy4xRNFOvM0SgeNwHd24zsycpH3VM6H7kHh5C47ISqyfDJgD6DuvL2qPj56W5vKmasj74mdiuVY1cLL8HmT6oFtacGj0qoBRSYLkWLF79I4mkkuAaMmEN5If0bINAs6dAdD9fsFZ-0HDS58_Z_psCUlQZXsG3alJHdufDNSmUl1CGNd00mJJiR50mXc5yIeLdBHNQAOlRu8MoCsQOzJO0S2Mbf-77gqlaTZaXPjLL-gBjJe5b2HubzGJW9Sbr-IHsl00ol3tg2PM3V-iBVmG9M25Is48h09glYCQsoFd673O-UhwjZrYR11DfII_7p94GdTQF8uLcMaaCi9q1SvLSZdGrFHQCx1ZOgbdVG7-vJGPH3boo93eeKdBM_p57LyISS-0s_oH9lxHP6GgyXExVUAf8BkHb_3qI1ebFzPk2AUYy3MhVACld5QFAKotoxE0roZ6o2ebMbkyW019taJvO6PRt2XkJyoiA-RUrhjg4lAcavRAnlZzYIsi0NZXxquHC_ZQqmVHr5k0SLzlBQB52HxP55I35S6CK-opiZV1fRR0i-6WiDhIX3-CWE0kOvf2ttHxuf0k'
             ),
         );
         $response = wp_remote_get($url, $arguments);
@@ -185,7 +186,9 @@ class Listing_Settings {
             $custom_offer_array = array_slice($offerArray['data'], 0, $result_num);
         }
         else{
-            $custom_offer_array = array_slice($offerArray['data'], 0, 10);
+            if (!empty($offerArray['data'])){
+                $custom_offer_array = array_slice($offerArray['data'], 0, 10);
+            }
         }
 //        self::get_pagination($offerArray);
         return  $custom_offer_array;
@@ -195,8 +198,8 @@ class Listing_Settings {
         foreach ($custom_offer_array as $row){
             $image_url = $row['image_url'];
             $image_type_check = @exif_imagetype($image_url);//Get image type + check if exists
-            if (strpos($http_response_header[0], "403") || strpos($http_response_header[0], "404") || strpos($http_response_header[0], "302") || strpos($http_response_header[0], "301")) {
-                $image_url = 'https://dummyimage.com/600x400/7dc9ff/ffffff&text=Sorry+No+image+Available';
+            if (!$image_type_check)  {
+                $image_url =  wp_get_attachment_url(get_option('default_image_for_bronken_link'));
             }
             $gallery = [];$gallery_item=[];
             foreach ($row['images'] as $key => $value):
@@ -211,7 +214,7 @@ class Listing_Settings {
                 'name' => $row['title'],
                 'slug'=>$row['board'],
                 'has_price'=>1,
-                'link' => get_site_url($row['id'],'/?post_type=estate&p='.$row['id'],null),
+                'link' => site_url() . '/?post_type=estate&p=' . $row['id'],
                 'excerpt' => '',
                 'image_srcset' => '',
                 'image' => $image_url,

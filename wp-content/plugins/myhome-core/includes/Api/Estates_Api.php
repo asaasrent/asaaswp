@@ -100,16 +100,16 @@ class Estates_Api {
 		} else {
 			$params = $request;
 		}
-		$databody = $params['body'];
-
-        $params = json_decode($databody, true);
-    //    var_dump(empty( $params['data'] ) ? 'true' : 'false' );
-        $filters         = empty( $params['data'] ) ? [] : $params['data'];
-        $current_page = array_keys($filters)[0];
-        $total = array_keys($filters)[11];
-
-        $estates_factory = new Estate_Factory();
-        $mydata=   $estates_factory->get_results($filters);
+//		$databody = $params['body'];
+//
+//        $params = json_decode($databody, true);
+//    //    var_dump(empty( $params['data'] ) ? 'true' : 'false' );
+//        $filters         = empty( $params['data'] ) ? [] : $params['data'];
+//        $current_page = array_keys($filters)[0];
+//        $total = array_keys($filters)[11];
+//
+//        $estates_factory = new Estate_Factory();
+//        $mydata=   $estates_factory->get_results($filters);
 //        print_r($filters[$total]);exit();
 
 
@@ -135,9 +135,9 @@ class Estates_Api {
 //		}
 
         //$params['current_page']
-		if ( isset( $filters[$test[0]] ) ) {
-                $estates_factory->set_page( $filters[$test[0]] );
-		}
+//		if ( isset( $filters[$test[0]] ) ) {
+//                $estates_factory->set_page( $filters[$test[0]] );
+//		}
 
 //		if ( isset( $params['sortBy'] ) ) {
 //			$estates_factory->set_sort_by( $params['sortBy'] );
@@ -153,10 +153,10 @@ class Estates_Api {
 //			global $sitepress;
 //			$sitepress->switch_lang( $params['mh_lang'] );
 //		}
-
-		if ( isset( $params['id'] ) ) {
-			$estates_factory->set_user_id( $params['id'] );
-		}
+//
+//		if ( isset( $params['id'] ) ) {
+//			$estates_factory->set_user_id( $params['id'] );
+//		}
 
 //		if ( isset( $params['users'] ) ) {
 //			$estates_factory->set_users( $params['users'] );
@@ -184,8 +184,8 @@ class Estates_Api {
 //		}
 
 		return array(
-			'results'       => $filters,
-			'found_results' => $filters[$total]
+			'results'       => [],
+			'found_results' => []
 		);
 	}
 

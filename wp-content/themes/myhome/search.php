@@ -49,7 +49,7 @@ get_template_part( 'templates/top-title' );
                     <?php endif;
                 else: ?>
                     <h2>
-                        <?php esc_html_e( 'No results', 'myhome' ); ?>
+                        <?php esc_html_e( 'لا يوجد نتائج', 'myhome' ); ?>
                     </h2>
                 <?php endif; ?>
             </div>

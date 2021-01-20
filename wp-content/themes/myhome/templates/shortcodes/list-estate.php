@@ -18,7 +18,6 @@ global $myhome_estate_list;
 
                         <a href="<?php echo esc_url( $myhome_estate->get_link() ); ?>"
                            title="<?php echo esc_attr( $myhome_estate->get_name() ); ?>"
-                           class="mh-thumbnail"
 							<?php if ( \MyHomeCore\Estates\Estate::is_new_tab() ) : ?>
                                 target="_blank"
 							<?php endif; ?>
@@ -26,16 +25,15 @@ global $myhome_estate_list;
 
                             <div class="mh-thumbnail__inner">
                                 <?php
-
                                 $image_url = $myhome_estate->get_data_api()['image_url'];
                                 $image_type_check = @exif_imagetype($image_url);//Get image type + check if exists
-                                if (strpos($http_response_header[0], "403") || strpos($http_response_header[0], "404") || strpos($http_response_header[0], "302") || strpos($http_response_header[0], "301")) :
+                                if (!$image_type_check) :
                                     ?>
                                     <a class="mh-popup" href=""
                                        title="الصورة غير متوفرة"
                                     >
-                                        <img src="https://dummyimage.com/400x200/7dc9ff/ffffff&text=Sorry+No+image+Available"
-                                             alt="<?php the_title_attribute(); ?>">
+                                        <?php echo "<img src='".wp_get_attachment_url( get_option( 'default_image_for_bronken_link' ) )."' ";
+                                        ?>
                                     </a>
                                 <?php
                                 else:

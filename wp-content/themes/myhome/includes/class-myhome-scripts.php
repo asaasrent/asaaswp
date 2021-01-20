@@ -51,6 +51,7 @@ if ( ! class_exists( 'My_Home_Scripts' ) ) :
 				wp_enqueue_style( 'sweetalert2', get_template_directory_uri() . '/assets/css/sweetalert2.min.css', array(), My_Home_Theme()->version );
 
 				$google_api_key = trim( My_Home_Theme()->settings->get( 'google-api-key' ) );
+                if(!is_page(588)):
 				wp_register_script(
 					'google-maps-api-admin',
 					apply_filters( 'myhome_google_api_url', '//maps.googleapis.com' ) . '/maps/api/js?libraries=places&key=' . $google_api_key,
@@ -58,6 +59,7 @@ if ( ! class_exists( 'My_Home_Scripts' ) ) :
 					false,
 					false
 				);
+                endif;
 				wp_enqueue_style( 'material-css', get_template_directory_uri() . '/assets/css/material.min.css', array(), My_Home_Theme()->version );
 				wp_enqueue_style( 'material-icons', get_template_directory_uri() . '/assets/css/material-icon.css', array(), My_Home_Theme()->version );
 				wp_enqueue_script( 'jquery-sticky', get_template_directory_uri() . '/assets/js/jquery.sticky.js', array(), My_Home_Theme()->version );
@@ -2028,6 +2030,7 @@ if ( ! class_exists( 'My_Home_Scripts' ) ) :
 			$google_api_key = apply_filters( 'myhome_google_map_api_key', trim( My_Home_Theme()->settings->get( 'google-api-key' ) ) );
 
 			if ( ! empty( $google_api_key ) ) {
+                if(!is_page(588)):
 				wp_register_script(
 					'google-maps-api',
 					apply_filters( 'myhome_google_api_url', '//maps.googleapis.com' ) . '/maps/api/js?key=' . $google_api_key . '&libraries=places',
@@ -2035,6 +2038,7 @@ if ( ! class_exists( 'My_Home_Scripts' ) ) :
 					null,
 					false
 				);
+                endif;
 				wp_register_script(
 					'myhome-map',
 					get_template_directory_uri() . '/assets/js/myhome-map.min.js',
